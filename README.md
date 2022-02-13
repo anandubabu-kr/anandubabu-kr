@@ -6,7 +6,7 @@ I am experienced as a freelancer in Web Designing during my collage days.
 
 👯 I love web development where I can play around with HTML, CSS and designing concepts
 
-Please feel free to visit my portfolio : https://anandubabu.netlify.app/about
+Please feel free to visit my portfolio : https://anandubabu.netlify.app/
 
 ### 💬 Ask me about ...
 - JavaScript, HTML, CSS.
