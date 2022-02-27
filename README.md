@@ -14,11 +14,21 @@ Please feel free to visit my portfolio : https://anandubabu.netlify.app/
 - NodeJS.
 - Figma, Photoshop and Illustrator.
 - UNIX - bash, perl and scripting
-
+- 
+### 🥇 Projects 
+- Portfolio 
+- Digimattaz Website for techno cultural event: 
+- Memories app fullstack web application based on MERN stack
+- The Rend app - DBMS based online rendal app.
+- Todo app - Angular app
+- Mini Web applications.
+- Online shopi - React-Redux-Meterial UI app.
+- 
 ### 📫 Get in touch with me 
 - LinkedIn : https://www.linkedin.com/in/anandu-babucj7/
 - email : anandubabu.kr@gmail.com
 - Twitter  : https://twitter.com/Anandubabucj7
+
 
 <!--
 **AnanduBabucj7/anandubabucj7** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
