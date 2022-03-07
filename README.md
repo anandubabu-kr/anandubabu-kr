@@ -4,7 +4,7 @@ I am currently working as a Support Executive at Tata Consultancy Services.
 This role helps me to understand the UNIX System.
 I am experienced as a freelancer in Web Designing during my collage days.
 
-👯 I love web development where I can play around with HTML, CSS and designing concepts
+👯 I love web development where I can play around designing concepts to solve UI/UX problems and build applications.
 
 Please feel free to visit my portfolio : https://anandubabu.netlify.app/
 
