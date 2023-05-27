@@ -1,7 +1,7 @@
 # Hi there 👋 
 
-I am Anandu from Kerala, currently working as a RedHat linux platform expert at Tata Consultancy Services.  
-I started my career as a freelance web designer during my college days and made happy customers across the globe by delivering quality products using WordPress, HTML, CSS, bootstrap and JavaScript.  
+Front end software engineer with more than 3 years of experience and skilled in MERN stack.
+reactJS, Typescript, prisma, antd, tailwindCSS, electronJS.
 
 
 ### 📫 Get in touch with me  
