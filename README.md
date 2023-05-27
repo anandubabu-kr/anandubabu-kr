@@ -1,8 +1,16 @@
 # Hi there 👋 
 
 Front end software engineer with more than 3 years of experience and skilled in MERN stack.
-reactJS, Typescript, prisma, antd, tailwindCSS, electronJS.
 
+![skills](skill.png)
+
+
+ReactJS
+Typescript
+prisma
+antd
+tailwindCSS
+electronJS.
 
 ### 📫 Get in touch with me  
 
