@@ -70,6 +70,26 @@ body {
   background-repeat: no-repeat;*/
 }
 
+nav li:hover {
+  background: linear-gradient(
+    -45deg,
+    hsla(0, 78%, 57%, 0.1),
+    hsla(14, 82%, 63%, 0.1),
+    hsla(60, 100%, 60%, 0.1),
+    hsla(30, 100%, 60%, 0.1)
+  );
+}
+
+nav li:hover a {
+  font-weight: 800;
+  background-image: linear-gradient(90deg, #ff9933, #e73c7e);
+  animation: gradient 8s ease infinite;
+  text-decoration: underline;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .card {
   grid-template-columns: repeat(5, 1fr);
   /* width: 100%; */

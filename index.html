@@ -45,7 +45,7 @@
       </span>
 
       <a
-        class="bg-orange-500 text-white text-sm px-4 py-2 rounded-xl"
+        class="bg-orange-500 text-white text-sm px-4 py-2 rounded-xl md:hidden"
         href="resume.html"
         >My resume</a
       >
@@ -62,25 +62,17 @@
         class="menu-container bg-white fixed md:static flex flex-col h-[100vh] justify-between md:h-auto md:text-sm bg-white w-[70%] md:w-auto pt-24 pb-10 md:pb-0 md:pt-0"
       >
         <menu class="flex flex-col md:flex-row">
-          <li
-            class="hover:bg-orange-200 px-4 py-2 capitalize duration-7 text-center"
-          >
+          <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
             <a href="#home"> Home </a>
           </li>
-          <li
-            class="hover:bg-orange-200 px-4 py-2 capitalize duration-7 text-center"
-          >
+          <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
             <a href="#projects"> projects </a>
           </li>
-          <li
-            class="hover:bg-orange-200 px-4 py-2 capitalize duration-7 text-center"
-          >
+          <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
             <a href="#skills"> skills </a>
           </li>
-          <li
-            class="hover:bg-orange-200 px-4 py-2 capitalize duration-7 text-center"
-          >
-            <a href="#contact"> contact </a>
+          <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
+            <a href="resume.html"> contact </a>
           </li>
         </menu>
         <div class="mx-auto md:hidden">Social links</div>
@@ -108,10 +100,14 @@
             <h1 class="text-2xl font-bold">Anandu Babu</h1>
             <h3 class="text-xl">Web developer</h3>
             <p class="text-sm">@anandubabukr</p>
+            <a
+              class="bg-orange-500 text-white text-sm px-4 py-2 rounded-xl hidden md:block text-center mt-4"
+              href="resume.html"
+              >My resume</a
+            >
           </div>
         </div>
       </div>
-      <div class="absolute">X</div>
     </header>
 
     <main>
