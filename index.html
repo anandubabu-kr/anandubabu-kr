@@ -11,10 +11,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- <link
+    <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
       rel="stylesheet"
-    /> -->
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,7 +31,7 @@
 
   <body class="box-border">
     <nav
-      class="flex sticky top-0 relative justify-between items-center h-16 px-4 md:px-5 border-b-2 border-orange-400 bg-white nav z-10"
+      class="flex overflow-hidden sticky top-0 relative justify-between items-center h-16 px-4 md:px-5 border-b-2 border-orange-400 bg-white nav z-10"
     >
       <span>
         <a href="resume.html">
@@ -45,22 +45,23 @@
       </span>
 
       <a
-        class="bg-orange-500 text-white px-4 py-2 rounded-xl"
+        class="bg-orange-500 text-white text-sm px-4 py-2 rounded-xl"
         href="resume.html"
         >My resume</a
       >
 
       <div
         class="px-4 md:hidden fixed bottom-12 right-12 debug aspect-square"
-        onclick="toggleNaveBar()"
+        onclick="openNaveBar()"
       >
         --
       </div>
 
       <div
-        class="menu-container absolute md:static flex flex-col h-[100vh] justify-between md:h-auto md:text-sm bg-white w-[70%] md:w-auto pt-24 pb-10 md:pb-0 md:pt-0"
+        id="menu-container"
+        class="menu-container bg-white fixed md:static flex flex-col h-[100vh] justify-between md:h-auto md:text-sm bg-white w-[70%] md:w-auto pt-24 pb-10 md:pb-0 md:pt-0"
       >
-        <menu class="flex flex-col debug md:flex-row">
+        <menu class="flex flex-col md:flex-row">
           <li
             class="hover:bg-orange-200 px-4 py-2 capitalize duration-7 text-center"
           >
@@ -83,6 +84,12 @@
           </li>
         </menu>
         <div class="mx-auto md:hidden">Social links</div>
+        <div
+          class="px-4 md:hidden debug aspect-square"
+          onclick="closeNaveBar()"
+        >
+          --
+        </div>
       </div>
     </nav>
 
