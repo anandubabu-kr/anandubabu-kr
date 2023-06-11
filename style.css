@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --dark: #001219;
+}
+
 .debug {
   border: 1px solid red;
-  background-color: #ee775234;
+  background-color: #ee775256;
 }
 
 html {
@@ -13,6 +17,7 @@ html {
 
 body {
   font-family: Montserrat;
+  /* background-color: var(--dark); */
   /* font-family: "Roboto", sans-serif; */
 }
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -70,6 +75,23 @@ body {
   background-repeat: no-repeat;*/
 }
 
+menu {
+  height: 0px;
+  z-index: 5;
+  background-color: white;
+}
+
+nav .line::after {
+  content: "";
+  position: absolute;
+  top: -200px;
+  bottom: 0px;
+  left: 50%;
+  border: 2px solid #ffb8035a;
+  box-shadow: 0 0 2rem #ffb703;
+  z-index: 4;
+}
+
 nav li:hover {
   background: linear-gradient(
     -45deg,
@@ -93,6 +115,7 @@ nav li:hover a {
 .card {
   grid-template-columns: repeat(5, 1fr);
   /* width: 100%; */
+  transition: 0.7s;
   max-width: 500px;
 }
 
@@ -101,6 +124,13 @@ nav li:hover a {
   grid-row: 1/2;
   height: 100%;
   width: auto;
+}
+
+.card:hover {
+  border: none;
+  box-shadow: -5px 5px 0px #ee7752, -10px 10px 0px #ff9933,
+    -15px 15px 0px #e73c7e;
+  transform: translate(15px, -15px);
 }
 
 .card div.content {
@@ -131,6 +161,7 @@ nav li:hover a {
     transition: 400ms;
   }
   .active {
+    height: fit-content;
     transform: translateX(0%);
   }
 }

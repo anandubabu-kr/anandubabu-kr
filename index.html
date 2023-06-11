@@ -30,65 +30,32 @@
   </head>
 
   <body class="box-border">
-    <nav
-      class="flex overflow-hidden sticky top-0 relative justify-between items-center h-16 px-4 md:px-5 border-b-2 border-orange-400 bg-white nav z-10"
-    >
-      <span>
-        <a href="resume.html">
-          <img
-            src="./assets/profile.png"
-            alt=""
-            width="40px"
-            class="rounded-full"
-          />
-        </a>
-      </span>
-
-      <a
-        class="bg-orange-500 text-white text-sm px-4 py-2 rounded-xl md:hidden"
-        href="resume.html"
-        >My resume</a
-      >
-
-      <div
-        class="px-4 md:hidden fixed bottom-12 right-12 debug aspect-square"
-        onclick="openNaveBar()"
-      >
-        --
+    <nav class="hidden">
+      <div class="fixed flex-col bottom-10 right-10 debug h-12 w-12">
+        <div class="line relative">open</div>
       </div>
-
-      <div
-        id="menu-container"
-        class="menu-container bg-white fixed md:static flex flex-col h-[100vh] justify-between md:h-auto md:text-sm bg-white w-[70%] md:w-auto pt-24 pb-10 md:pb-0 md:pt-0"
+      <menu
+        class="flex fixed flex-col bottom-24 right-10 /debug overflow-hidden active"
       >
-        <menu class="flex flex-col md:flex-row">
-          <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
-            <a href="#home"> Home </a>
-          </li>
-          <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
-            <a href="#projects"> projects </a>
-          </li>
-          <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
-            <a href="#skills"> skills </a>
-          </li>
-          <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
-            <a href="resume.html"> contact </a>
-          </li>
-        </menu>
-        <div class="mx-auto md:hidden">Social links</div>
-        <div
-          class="px-4 md:hidden debug aspect-square"
-          onclick="closeNaveBar()"
-        >
-          --
-        </div>
-      </div>
+        <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
+          <a href="#home"> Home </a>
+        </li>
+        <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
+          <a href="#projects"> projects </a>
+        </li>
+        <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
+          <a href="#skills"> skills </a>
+        </li>
+        <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
+          <a href="resume.html"> contact </a>
+        </li>
+      </menu>
     </nav>
 
-    <header id="home" class="h-[80vh] v-full box-border bg-animated relative">
+    <header id="home" class="h-[80vh] v-full box-border bg-animated /relative">
       <div class="bg-imaged flex items-center justify-center bg-opacity-10">
         <div
-          class="flex items-center flex-col md:flex-row justify-center /w-[600px] bg-gray-400 p-4 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 /border border-gray-100"
+          class="flex items-center flex-col md:flex-row justify-center /w-[600px] p-4 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 /border border-gray-100"
         >
           <img
             src="./assets/profile.png"
@@ -101,7 +68,7 @@
             <h3 class="text-xl">Web developer</h3>
             <p class="text-sm">@anandubabukr</p>
             <a
-              class="bg-orange-500 text-white text-sm px-4 py-2 rounded-xl hidden md:block text-center mt-4"
+              class="bg-orange-500 text-white text-sm px-4 py-2 rounded-xl md:block text-center mt-4"
               href="resume.html"
               >My resume</a
             >
@@ -125,7 +92,10 @@
               class="content box-border rounded-xl px-4 py-2 bg-clip-padding backdrop-filter bg-black backdrop-blur-sm bg-opacity-50 border border-gray-100 text-white"
             >
               <h1 class="text-xl font-bold">Metro Apps Suite</h1>
-              <p class="mt-3">Desktop application, responsive web sites</p>
+              <p class="mt-3">
+                A complete solution for day to day bushiness challenges of LMS
+                with admin panel. delivery boy app, costumer app.
+              </p>
               <p class="text-xs mt-2">ReactJS, Tailwind, ElectronJS</p>
             </div>
           </div>
@@ -133,8 +103,22 @@
       </section>
 
       <section id="skills" class="mt-4 h-[80vh]">
-        <h1 class="text-2xl text-center">Skills</h1>
+        <h1 class="text-2xl text-center mb-4">Skills</h1>
         <hr width="300px" class="mx-auto mt-4 border-orange-200" />
+
+        <div
+          id="items"
+          class="caresol flex flex-col justify-center items-center sm:flex-row py-2 md:px-24 box-border w-full"
+        >
+          <div class="flex flex-col sm:flex-row items-center mx-2">
+            <img src="./assets/skills/figma.png" width="50px" alt="figma" />
+            <h1 class="mx-auto">Figma design</h1>
+          </div>
+          <div class="flex flex-col sm:flex-row items-center mx-2">
+            <img src="./assets/skills/react.png" width="50px" alt="figma" />
+            <h1 class="mx-auto">react JS</h1>
+          </div>
+        </div>
       </section>
 
       <section id="resume" class="mt-4">
