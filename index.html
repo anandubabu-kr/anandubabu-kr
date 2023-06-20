@@ -31,44 +31,44 @@
 
   <body class="box-border">
     <nav class="hidden">
-      <div class="fixed flex-col bottom-10 right-10 debug h-12 w-12">
-        <div class="line relative">open</div>
+      <div class="fixed flex-col w-12 h-12 bottom-10 right-10 debug">
+        <div class="relative line">open</div>
       </div>
       <menu
-        class="flex fixed flex-col bottom-24 right-10 /debug overflow-hidden active"
+        class="fixed flex flex-col overflow-hidden bottom-24 right-10 /debug active"
       >
-        <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
+        <li class="px-4 py-2 text-center capitalize duration-7 rounded-xl">
           <a href="#home"> Home </a>
         </li>
-        <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
+        <li class="px-4 py-2 text-center capitalize duration-7 rounded-xl">
           <a href="#projects"> projects </a>
         </li>
-        <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
+        <li class="px-4 py-2 text-center capitalize duration-7 rounded-xl">
           <a href="#skills"> skills </a>
         </li>
-        <li class="px-4 py-2 capitalize duration-7 text-center rounded-xl">
+        <li class="px-4 py-2 text-center capitalize duration-7 rounded-xl">
           <a href="resume.html"> contact </a>
         </li>
       </menu>
     </nav>
 
     <header id="home" class="h-[80vh] v-full box-border bg-animated /relative">
-      <div class="bg-imaged flex items-center justify-center bg-opacity-10">
+      <div class="flex items-center justify-center bg-imaged bg-opacity-10">
         <div
           class="flex items-center flex-col md:flex-row justify-center /w-[600px] p-4 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 /border border-gray-100"
         >
           <img
             src="./assets/profile.png"
             width="150px"
-            class="rounded-full p-3"
+            class="p-3 rounded-full"
             alt="me - Anandu Babu"
           />
-          <div class="flex flex-col px-4 border-l-4 h-full">
+          <div class="flex flex-col h-full px-4 border-l-4">
             <h1 class="text-2xl font-bold">Anandu Babu</h1>
             <h3 class="text-xl">Web developer</h3>
             <p class="text-sm">@anandubabukr</p>
             <a
-              class="bg-orange-500 text-white text-sm px-4 py-2 rounded-xl md:block text-center mt-4"
+              class="px-4 py-2 mt-4 text-sm text-center text-white bg-orange-500 rounded-xl md:block"
               href="resume.html"
               >My resume</a
             >
@@ -78,45 +78,89 @@
     </header>
 
     <main>
-      <section id="projects" class="h-[80vh] box-border">
-        <h1 class="text-2xl text-center">Projects</h1>
+      <section id="projects" class="h-[80vh] box-border mt-4 flex-wrap">
+        <h1 class="text-2xl text-center">Top 3 Projects</h1>
         <hr width="300px" class="mx-auto mt-4 border-orange-200" />
         <div
-          class="caresol flex flex-col justify-center items-center md:flex-row py-2 md:px-24 box-border w-full"
+          class="box-border flex flex-col items-center justify-center w-full py-2 caresol md:flex-row md:px-24"
         >
           <div
             class="card m-2 pr-2 grid h-[200px] bg-slate-200 rounded-xl hidden/ overflow-hidden box-border"
           >
             <img src="./assets/projects/p-1-metro.png" alt="metro LMS" />
             <div
-              class="content box-border rounded-xl px-4 py-2 bg-clip-padding backdrop-filter bg-black backdrop-blur-sm bg-opacity-50 border border-gray-100 text-white"
+              class="box-border px-4 py-2 text-white bg-black bg-opacity-50 border border-gray-100 content rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
             >
               <h1 class="text-xl font-bold">Metro Apps Suite</h1>
               <p class="mt-3">
                 A complete solution for day to day bushiness challenges of LMS
                 with admin panel. delivery boy app, costumer app.
               </p>
-              <p class="text-xs mt-2">ReactJS, Tailwind, ElectronJS</p>
+              <p class="mt-2 text-xs">ReactJS, Tailwind, ElectronJS</p>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div
+            class="card m-2 pr-2 grid h-[200px] bg-slate-200 rounded-xl hidden/ overflow-hidden box-border"
+          >
+            <img
+              src="./assets/projects/p-2-i18.png"
+              alt="I18 translator UI SS"
+            />
+            <div
+              class="box-border px-4 py-2 text-white bg-black bg-opacity-50 border border-gray-100 content rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
+            >
+              <h1 class="text-xl font-bold">I18 translator</h1>
+              <p class="mt-3">
+                I18 translator is a react based desktop application using taury
+                to enable internationalization of a website using i18next JS.
+              </p>
+              <p class="mt-2 text-xs">ReactJS, Tailwind, Taury</p>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div
+            class="card m-2 pr-2 grid h-[200px] bg-slate-200 rounded-xl hidden/ overflow-hidden box-border"
+          >
+            <img
+              src="./assets/projects/p-2-i18.png"
+              alt="I18 translator UI SS"
+            />
+            <div
+              class="box-border px-4 py-2 text-white bg-black bg-opacity-50 border border-gray-100 content rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
+            >
+              <h1 class="text-xl font-bold">Web devGuru</h1>
+              <p class="mt-3">
+                Collection of react/javascript code snippets for developers with
+                attractive UI along with level based tutorials
+              </p>
+              <p class="mt-2 text-xs">AstroJS ,ReactJS, Tailwind</p>
             </div>
           </div>
         </div>
       </section>
 
       <section id="skills" class="mt-4 h-[80vh]">
-        <h1 class="text-2xl text-center mb-4">Skills</h1>
+        <h1 class="mb-4 text-2xl text-center">Skills</h1>
         <hr width="300px" class="mx-auto mt-4 border-orange-200" />
 
-        <div
-          id="items"
-          class="caresol flex flex-col justify-center items-center sm:flex-row py-2 md:px-24 box-border w-full"
-        >
-          <div class="flex flex-col sm:flex-row items-center mx-2">
+        <div id="items" class="box-border flex flex-wrap">
+          <div class="flex flex-col items-center mx-2 sm:flex-row">
             <img src="./assets/skills/figma.png" width="50px" alt="figma" />
-            <h1 class="mx-auto">Figma design</h1>
+            <h1 class="mx-4">Figma design</h1>
           </div>
-          <div class="flex flex-col sm:flex-row items-center mx-2">
+          <div class="flex flex-col items-center mx-2 sm:flex-row">
             <img src="./assets/skills/react.png" width="50px" alt="figma" />
-            <h1 class="mx-auto">react JS</h1>
+            <h1 class="mx-4">react JS</h1>
+          </div>
+          <div class="flex flex-col items-center mx-2 sm:flex-row">
+            <img src="./assets/skills/antd.jpg" width="50px" alt="figma" />
+            <h1 class="mx-4">antd</h1>
+          </div>
+          <div class="flex flex-col items-center mx-2 sm:flex-row">
+            <img src="./assets/skills/rq.png" width="50px" alt="figma" />
+            <h1 class="mx-4">react query</h1>
           </div>
         </div>
       </section>
