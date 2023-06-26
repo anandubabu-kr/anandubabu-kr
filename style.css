@@ -115,14 +115,14 @@ nav li:hover a {
 }
 
 .card {
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   /* width: 100%; */
   transition: 0.7s;
-  max-width: 500px;
+  /* max-width: 500px; */
 }
 
 .card img {
-  grid-column: 1/4;
+  grid-column: 1/5;
   grid-row: 1/2;
   height: 100%;
   width: auto;
@@ -136,7 +136,7 @@ nav li:hover a {
 }
 
 .card div.content {
-  grid-column: 2/-1;
+  grid-column: 4/-1;
   grid-row: 1/2;
   align-self: center;
 }

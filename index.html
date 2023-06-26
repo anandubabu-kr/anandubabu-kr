@@ -78,18 +78,16 @@
     </header>
 
     <main>
-      <section id="projects" class="h-[80vh] box-border mt-4 flex-wrap">
+      <section id="projects" class="/h-[80vh] box-border mt-4">
         <h1 class="text-2xl text-center">Top 3 Projects</h1>
         <hr width="300px" class="mx-auto mt-4 border-orange-200" />
-        <div
-          class="box-border flex flex-col items-center justify-center w-full py-2 caresol md:flex-row md:px-24"
-        >
+        <div class="box-border w-full py-2 caresol md:flex-row md:px-24">
           <div
-            class="card m-2 pr-2 grid h-[200px] bg-slate-200 rounded-xl hidden/ overflow-hidden box-border"
+            class="w-[80%] mx-auto box-border flex flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl hidden/"
           >
             <img src="./assets/projects/p-1-metro.png" alt="metro LMS" />
             <div
-              class="box-border px-4 py-2 text-white bg-black bg-opacity-50 border border-gray-100 content rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
+              class="box-border px-4 py-2 border border-gray-100 text-slate-900 md:text-white md:bg-opacity-50 md:bg-black content rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
             >
               <h1 class="text-xl font-bold">Metro Apps Suite</h1>
               <p class="mt-3">
@@ -101,14 +99,14 @@
           </div>
           <!-- 2 -->
           <div
-            class="card m-2 pr-2 grid h-[200px] bg-slate-200 rounded-xl hidden/ overflow-hidden box-border"
+            class="w-[80%] mx-auto box-border flex flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl hidden/"
           >
             <img
               src="./assets/projects/p-2-i18.png"
               alt="I18 translator UI SS"
             />
             <div
-              class="box-border px-4 py-2 text-white bg-black bg-opacity-50 border border-gray-100 content rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
+              class="box-border px-4 py-2 border border-gray-100 text-slate-900 md:text-white md:bg-opacity-50 md:bg-black content rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
             >
               <h1 class="text-xl font-bold">I18 translator</h1>
               <p class="mt-3">
@@ -121,14 +119,11 @@
 
           <!-- 2 -->
           <div
-            class="card m-2 pr-2 grid h-[200px] bg-slate-200 rounded-xl hidden/ overflow-hidden box-border"
+            class="w-[80%] mx-auto box-border flex flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl hidden/"
           >
-            <img
-              src="./assets/projects/p-2-i18.png"
-              alt="I18 translator UI SS"
-            />
+            <img src="./assets/projects/p-3-webdevguru.png" alt="Web devguru" />
             <div
-              class="box-border px-4 py-2 text-white bg-black bg-opacity-50 border border-gray-100 content rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
+              class="box-border px-4 py-2 border border-gray-100 text-slate-900 md:text-white md:bg-opacity-50 md:bg-black content rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
             >
               <h1 class="text-xl font-bold">Web devGuru</h1>
               <p class="mt-3">
@@ -145,7 +140,10 @@
         <h1 class="mb-4 text-2xl text-center">Skills</h1>
         <hr width="300px" class="mx-auto mt-4 border-orange-200" />
 
-        <div id="items" class="box-border flex flex-wrap">
+        <div
+          id="items"
+          class="box-border flex flex-wrap items-center justify-center mt-7"
+        >
           <div class="flex flex-col items-center mx-2 sm:flex-row">
             <img src="./assets/skills/figma.png" width="50px" alt="figma" />
             <h1 class="mx-4">Figma design</h1>
@@ -164,11 +162,50 @@
           </div>
         </div>
       </section>
-
-      <section id="resume" class="mt-4">
-        <h1>Anandu Babu</h1>
-      </section>
     </main>
-    <footer class="mt-4"></footer>
+
+    <footer class="p-8 mt-4 text-white bg-slate-700">
+      <div>
+        <h1 class="text-center">&copy; Anandu Babu</h1>
+        <p class="text-center">2023</p>
+      </div>
+      <div class="justify-between mx-auto md:flex">
+        <div class="mt-4">
+          <a
+            href="mailto:anandubabu.kr@gmail.com"
+            class="flex items-center justify-between px-6 mx-auto"
+          >
+            <img
+              src="./assets/icons/mail.png"
+              class="w-5 h-5 mx-4"
+              alt="email"
+            />
+            <p>anandubabu.kr@gmail.com</p>
+          </a>
+          <a class="flex items-center justify-between px-6 mx-auto">
+            <img
+              src="./assets/icons/phone.png"
+              class="w-5 h-5 mx-4"
+              alt="Phone"
+            />
+            <p>+91 9947975674</p>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/anandubabukr"
+            class="flex items-center justify-between px-6 mx-auto"
+          >
+            <img
+              src="./assets/icons/linkedin.png"
+              class="w-5 h-5 mx-4"
+              alt="LinkedIn"
+            />
+            <p>in/anandubabukr</p>
+          </a>
+        </div>
+        <div class="">
+          <p class="text-center">🚀</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
