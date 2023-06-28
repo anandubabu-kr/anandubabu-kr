@@ -136,7 +136,7 @@
         </div>
       </section>
 
-      <section id="skills" class="mt-4 h-[80vh]">
+      <section id="skills" class="mt-4 h-[8/0vh]">
         <h1 class="mb-4 text-2xl text-center">Skills</h1>
         <hr width="300px" class="mx-auto mt-4 border-orange-200" />
 
@@ -144,25 +144,76 @@
           id="items"
           class="box-border flex flex-wrap items-center justify-center mt-7"
         >
-          <div class="flex flex-col items-center mx-2 sm:flex-row">
+          <div
+            class="flex flex-col items-center justify-between h-20 m-2 sm:flex-row"
+          >
             <img src="./assets/skills/figma.png" width="50px" alt="figma" />
             <h1 class="mx-4">Figma design</h1>
           </div>
-          <div class="flex flex-col items-center mx-2 sm:flex-row">
+          <div
+            class="flex flex-col items-center justify-between h-20 m-2 sm:flex-row"
+          >
             <img src="./assets/skills/react.png" width="50px" alt="figma" />
             <h1 class="mx-4">react JS</h1>
           </div>
-          <div class="flex flex-col items-center mx-2 sm:flex-row">
+          <div
+            class="flex flex-col items-center justify-between h-20 m-2 sm:flex-row"
+          >
             <img src="./assets/skills/antd.jpg" width="50px" alt="figma" />
             <h1 class="mx-4">antd</h1>
           </div>
-          <div class="flex flex-col items-center mx-2 sm:flex-row">
+          <div
+            class="flex flex-col items-center justify-between h-20 m-2 sm:flex-row"
+          >
             <img src="./assets/skills/rq.png" width="50px" alt="figma" />
             <h1 class="mx-4">react query</h1>
+          </div>
+          <div
+            class="flex flex-col items-center justify-between h-20 m-2 sm:flex-row"
+          >
+            <img src="./assets/skills/nxtjs.png" width="50px" alt="next" />
+            <h1 class="mx-4">Next JS</h1>
+          </div>
+          <div
+            class="flex flex-col items-center justify-between h-20 m-2 sm:flex-row"
+          >
+            <img src="./assets/skills/astro.png" width="50px" alt="next" />
+            <h1 class="mx-4">Astro JS</h1>
           </div>
         </div>
       </section>
     </main>
+
+    <nav class="fixed social top-[70%] right-10 w-5 hidden">
+      <menu>
+        <li class="mt-4">
+          <a
+            href="https://github.com/anandubabu-kr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./assets/skills/github.png"
+              alt="github"
+              class="rounded-full w-30"
+            />
+          </a>
+        </li>
+        <li class="mt-4">
+          <a
+            href="https://www.linkedin.com/in/anandubabukr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./assets/icons/linkedin.png"
+              class="rounded-full w-30"
+              alt="LinkedIn"
+            />
+          </a>
+        </li>
+      </menu>
+    </nav>
 
     <footer class="p-8 mt-4 text-white bg-slate-700">
       <div>
@@ -170,10 +221,13 @@
         <p class="text-center">2023</p>
       </div>
       <div class="justify-between mx-auto md:flex">
+        <div class="">
+          <p class="text-center">🚀</p>
+        </div>
         <div class="mt-4">
           <a
             href="mailto:anandubabu.kr@gmail.com"
-            class="flex items-center justify-between px-6 mx-auto"
+            class="flex items-center px-6 mx-auto"
           >
             <img
               src="./assets/icons/mail.png"
@@ -182,7 +236,7 @@
             />
             <p>anandubabu.kr@gmail.com</p>
           </a>
-          <a class="flex items-center justify-between px-6 mx-auto">
+          <a class="flex items-center px-6 mx-auto">
             <img
               src="./assets/icons/phone.png"
               class="w-5 h-5 mx-4"
@@ -192,7 +246,7 @@
           </a>
           <a
             href="https://www.linkedin.com/in/anandubabukr"
-            class="flex items-center justify-between px-6 mx-auto"
+            class="flex items-center px-6 mx-auto"
           >
             <img
               src="./assets/icons/linkedin.png"
@@ -201,9 +255,6 @@
             />
             <p>in/anandubabukr</p>
           </a>
-        </div>
-        <div class="">
-          <p class="text-center">🚀</p>
         </div>
       </div>
     </footer>
