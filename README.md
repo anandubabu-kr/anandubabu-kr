@@ -15,7 +15,7 @@ Frontend engineer with three years of experience in architecting and delivering 
 
 ### 📫 Get in touch with me
 
-- Portfolio : https://anandubabu.info/
+- Portfolio : [https://anandubabu.info/](https://anandubabu-kr.github.io/anandubabu-kr/)
 - LinkedIn: https://www.linkedin.com/in/anandubabukr/
 - Email: anandubabu.kr@gmail.com
 - Twitter: https://twitter.com/anandubabukr
