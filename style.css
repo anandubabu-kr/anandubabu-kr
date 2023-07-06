@@ -100,31 +100,34 @@ body {
   border-radius: 50%;
 }
 
-.bg-animated::after {
+.bg-animated::before {
   width: 100px;
-  transform: rotate(32deg);
   height: 100px;
-  top: 10%;
+  top: 15%;
   left: 20%;
-  box-shadow: -5px 5px 0px #ee7752, -10px 10px 0px #ff9933;
+  animation-duration: 7s;
+
+  box-shadow: -65px 15px 0px #ea5b2f, -10px 70px 0px #ff9933;
 }
 
-.bg-animated::before {
+.bg-animated::after {
   width: 65px;
   height: 65px;
   bottom: 10%;
-  right: 20%;
-  transform: rotate(42deg);
-  box-shadow: 5px 5px 0px #ee7752, 10px 10px 0px #ff9933;
+  right: 30%;
+  box-shadow: 45px 5px 0px #eb5c31, 10px 30px 0px #ff9933,
+    330px 30px 0px #ff9933, 330px 60px 0px #eb5c31;
+  animation-duration: 9s;
 }
 
 .bg-imaged::before {
-  width: 25px;
-  height: 25px;
+  width: 75px;
+  height: 75px;
   bottom: 20%;
-  right: 70%;
-  transform: rotate(42deg);
-  box-shadow: -5px 5px 0px #ee7752, -10px 10px 0px #ff9933;
+  right: 60%;
+  animation-duration: 6s;
+
+  box-shadow: -65px 5px 0px #f0410c, -30px 50px 0px #ff9933;
 }
 
 .bg-imaged::after {
@@ -132,8 +135,7 @@ body {
   height: 75px;
   top: 20%;
   left: 70%;
-  transform: rotate(42deg);
-  box-shadow: -5px -5px 0px #ee7752, -10px -10px 0px #ff9933;
+  box-shadow: -55px -25px 0px #df3c0a, -10px -40px 0px #ff9933;
 }
 
 .bg-imaged {
@@ -153,8 +155,14 @@ menu {
   background-color: white;
 }
 
+.caresol {
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
 .card {
   grid-template-columns: repeat(8, 1fr);
+  flex: 1 0 600px;
   /* width: 100%; */
   transition: 0.7s;
   /* max-width: 500px; */

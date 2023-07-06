@@ -7,6 +7,13 @@
     <link rel="icon" type="image/x-icon" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- TODO meta tags -->
+
+    <meta name="description" content="" />
+    <meta property="og:title" content="web developer" />
+    <meta property="og:description" content="web developer" />
+    <meta property="og:image" content="url" />
+
     <!-- CDN imports -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,8 +32,8 @@
     <!-- local imports -->
     <script src="index.js" defer></script>
     <script src="./tailwind.config.js"></script>
-    <!-- <link rel="text/tailwindcss" href="./style.css" /> -->
     <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="text/tailwindcss" href="./style.css" /> -->
   </head>
 
   <body class="box-border">
@@ -55,7 +62,7 @@
     <header id="home" class="h-[80vh] v-full box-border bg-animated relative">
       <div class="flex items-center justify-center bg-imaged bg-opacity-10">
         <div
-          class="flex items-center flex-col md:flex-row justify-center /w-[600px] p-4 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 /border border-gray-100"
+          class="flex flex-col items-center justify-center p-4 border border-gray-100 md:flex-row rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10"
         >
           <img
             src="./assets/profile.png"
@@ -97,8 +104,9 @@
         <h1 class="text-2xl text-center">Top 3 recent projects</h1>
         <hr width="300px" class="mx-auto mt-4 border-orange-200" />
         <div class="box-border w-full py-2 caresol md:flex-row md:px-24">
+          <!-- 1 -->
           <div
-            class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl hidden/"
+            class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl"
           >
             <img src="./assets/projects/p-1-metro.png" alt="metro LMS" />
             <div
@@ -115,7 +123,7 @@
           </div>
           <!-- 2 -->
           <div
-            class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl hidden/"
+            class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl"
           >
             <img
               src="./assets/projects/p2-i18.png"
@@ -136,7 +144,7 @@
 
           <!-- 3 -->
           <div
-            class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl hidden/"
+            class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl"
           >
             <img src="./assets/projects/p-3-webdevguru.png" alt="Web devguru" />
             <div
@@ -167,22 +175,22 @@
           >
             <img
               class="rounded-full"
-              src="./assets/skills/figma.png"
+              src="./assets/skills/react.png"
               width="50px"
               alt="figma"
             />
-            <h1 class="mx-4">Figma design</h1>
+            <h1 class="mx-4">react JS</h1>
           </div>
           <div
             class="flex flex-col items-center justify-between h-20 m-2 sm:flex-row"
           >
             <img
               class="rounded-full"
-              src="./assets/skills/react.png"
+              src="./assets/skills/figma.png"
               width="50px"
               alt="figma"
             />
-            <h1 class="mx-4">react JS</h1>
+            <h1 class="mx-4">Figma design</h1>
           </div>
           <div
             class="flex flex-col items-center justify-between h-20 m-2 sm:flex-row"
@@ -206,7 +214,6 @@
             />
             <h1 class="mx-4">react query</h1>
           </div>
-
           <div
             class="flex flex-col items-center justify-between h-20 m-2 sm:flex-row"
           >
@@ -269,6 +276,7 @@
 
       <section id="intro" class="flex flex-col my-4 text-center">
         <hr class="w-[40%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
+        <p>vision</p>
         <p class="text-xl md:text-3xl w-[50%] mx-auto">
           "Collaborating closely with clients to understand their unique needs
           and translate them into stunning web solutions."
@@ -276,11 +284,12 @@
           .
           <br />
           <span class="font-bold /text-slate-900 decorated-text gradient-text">
-            Lets connect for your next projects
+            Let's connect for your next projects
           </span>
-          <hr class="w-[20%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
-          <p class="my-4 text-4xl">🔥</p>
         </p>
+
+        <hr class="w-[20%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
+        <p class="my-4 text-4xl">🔥</p>
       </section>
     </main>
 
@@ -293,7 +302,7 @@
             rel="noopener noreferrer"
           >
             <img
-              src="./assets/icons/social-gh.png"
+              src="./assets/icons/social-gh.svg"
               alt="github"
               class="rounded-full hover:bg-orange-400"
             />
@@ -306,9 +315,22 @@
             rel="noopener noreferrer"
           >
             <img
-              src="./assets/icons/social-ln.png"
+              src="./assets/icons/social-ln.svg"
               class="rounded-full hover:bg-orange-400"
               alt="LinkedIn"
+            />
+          </a>
+        </li>
+        <li class="mt-4">
+          <a
+            href="https://codepen.io/anandubabucj7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./assets/icons/codepen.svg"
+              class="rounded-full hover:bg-orange-400"
+              alt="CodePen"
             />
           </a>
         </li>
