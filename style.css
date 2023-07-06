@@ -54,6 +54,22 @@ body {
   background: linear-gradient(-45deg, #e73c7e, #ee7752);
 }
 
+.decorated-text {
+  text-shadow: 0.025em 0.025em 0 hsl(30, 100%, 60%),
+    0.05em 0.05em 0 hsl(0, 78%, 57%), 0.1em 0.1em 0 hsl(60, 100%, 60%);
+}
+
+.gradient-text {
+  background-image: linear-gradient(
+    90deg,
+    hsl(30, 100%, 60%),
+    hsl(0, 78%, 57%)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .bg-animated {
   background: linear-gradient(
     -45deg,
@@ -64,6 +80,60 @@ body {
   );
   background-size: 400% 400%;
   animation: gradient 8s ease infinite;
+}
+
+.bg-animated::after,
+.bg-animated::before,
+.bg-imaged::after,
+.bg-imaged::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(
+    -45deg,
+    hsl(14, 82%, 63%),
+    hsl(60, 100%, 60%),
+    hsl(0, 78%, 57%),
+    hsl(30, 100%, 60%)
+  );
+  background-size: 400% 400%;
+  animation: gradient 4s ease infinite;
+  border-radius: 50%;
+}
+
+.bg-animated::after {
+  width: 100px;
+  transform: rotate(32deg);
+  height: 100px;
+  top: 10%;
+  left: 20%;
+  box-shadow: -5px 5px 0px #ee7752, -10px 10px 0px #ff9933;
+}
+
+.bg-animated::before {
+  width: 65px;
+  height: 65px;
+  bottom: 10%;
+  right: 20%;
+  transform: rotate(42deg);
+  box-shadow: 5px 5px 0px #ee7752, 10px 10px 0px #ff9933;
+}
+
+.bg-imaged::before {
+  width: 25px;
+  height: 25px;
+  bottom: 20%;
+  right: 70%;
+  transform: rotate(42deg);
+  box-shadow: -5px 5px 0px #ee7752, -10px 10px 0px #ff9933;
+}
+
+.bg-imaged::after {
+  width: 75px;
+  height: 75px;
+  top: 20%;
+  left: 70%;
+  transform: rotate(42deg);
+  box-shadow: -5px -5px 0px #ee7752, -10px -10px 0px #ff9933;
 }
 
 .bg-imaged {
@@ -81,37 +151,6 @@ menu {
   height: 0px;
   z-index: 5;
   background-color: white;
-}
-
-nav .line::after {
-  content: "";
-  position: absolute;
-  top: -200px;
-  bottom: 0px;
-  left: 50%;
-  border: 2px solid #ffb8035a;
-  box-shadow: 0 0 2rem #ffb703;
-  z-index: 4;
-}
-
-nav li:hover {
-  background: linear-gradient(
-    -45deg,
-    hsla(0, 78%, 57%, 0.1),
-    hsla(14, 82%, 63%, 0.1),
-    hsla(60, 100%, 60%, 0.1),
-    hsla(30, 100%, 60%, 0.1)
-  );
-}
-
-nav li:hover a {
-  font-weight: 800;
-  background-image: linear-gradient(90deg, #ff9933, #e73c7e);
-  animation: gradient 8s ease infinite;
-  text-decoration: underline;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
 }
 
 .card {
