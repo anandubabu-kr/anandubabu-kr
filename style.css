@@ -133,7 +133,7 @@ body {
 .bg-imaged::after {
   width: 75px;
   height: 75px;
-  top: 20%;
+  top: 10%;
   left: 70%;
   box-shadow: -55px -25px 0px #df3c0a, -10px -40px 0px #ff9933;
 }
