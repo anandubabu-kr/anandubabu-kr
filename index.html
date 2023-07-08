@@ -12,7 +12,7 @@
     <meta name="description" content="" />
     <meta property="og:title" content="web developer" />
     <meta property="og:description" content="web developer" />
-    <meta property="og:image" content="url" />
+    <meta property="og:image" content="./assets/og-image.png" />
 
     <!-- CDN imports -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,10 +24,6 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
 
     <!-- local imports -->
     <script src="index.js" defer></script>
@@ -37,28 +33,6 @@
   </head>
 
   <body class="box-border">
-    <nav class="hidden">
-      <div class="fixed flex-col w-12 h-12 bottom-10 right-10 debug">
-        <div class="relative line">open</div>
-      </div>
-      <menu
-        class="fixed flex flex-col overflow-hidden bottom-24 right-10 /debug active"
-      >
-        <li class="px-4 py-2 text-center capitalize duration-7 rounded-xl">
-          <a href="#home"> Home </a>
-        </li>
-        <li class="px-4 py-2 text-center capitalize duration-7 rounded-xl">
-          <a href="#projects"> projects </a>
-        </li>
-        <li class="px-4 py-2 text-center capitalize duration-7 rounded-xl">
-          <a href="#skills"> skills </a>
-        </li>
-        <li class="px-4 py-2 text-center capitalize duration-7 rounded-xl">
-          <a href="resume.html"> contact </a>
-        </li>
-      </menu>
-    </nav>
-
     <header id="home" class="h-[80vh] v-full box-border bg-animated relative">
       <div class="flex items-center justify-center bg-imaged bg-opacity-10">
         <div
@@ -70,7 +44,7 @@
             class="p-3 rounded-full"
             alt="me - Anandu Babu"
           />
-          <div class="flex flex-col h-full px-4 border-l-4">
+          <div class="flex flex-col h-full px-4 border-l-4 border-orange-200">
             <h1 class="text-3xl font-bold md:text-6xl">Anandu Babu</h1>
             <h3 class="text-xl">Web developer</h3>
             <a href="https://www.linkedin.com/in/anandubabukr" class="text-sm">
@@ -146,7 +120,8 @@
           <div
             class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl"
           >
-            <img src="./assets/projects/p-3-webdevguru.png" alt="Web devguru" />
+            <!-- <img src="./assets/projects/p-3-webdevguru.png" alt="Web devguru" /> -->
+            <img src="./assets/og-image.png" alt="Web devguru" />
             <div
               class="box-border px-4 py-2 border border-gray-100 text-slate-900 md:text-white md:bg-opacity-50 md:bg-black content rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
             >
@@ -197,11 +172,11 @@
           >
             <img
               class="rounded-full"
-              src="./assets/skills/antd.jpg"
+              src="./assets/skills/tailwind.png"
               width="50px"
-              alt="figma"
+              alt="Tailwind"
             />
-            <h1 class="mx-4">antd</h1>
+            <h1 class="mx-4">Tailwind</h1>
           </div>
           <div
             class="flex flex-col items-center justify-between hidden h-20 m-2 sm:flex-row"
@@ -230,6 +205,39 @@
           >
             <img
               class="rounded-full"
+              src="./assets/skills/github.png"
+              width="50px"
+              alt="AstroJS"
+            />
+            <h1 class="mx-4">Git/Github</h1>
+          </div>
+          <div
+            class="flex flex-col items-center justify-between h-20 m-2 sm:flex-row"
+          >
+            <img
+              class="rounded-full"
+              src="./assets/skills/antd.jpg"
+              width="50px"
+              alt="figma"
+            />
+            <h1 class="mx-4">antd</h1>
+          </div>
+          <div
+            class="flex flex-col items-center justify-between h-20 m-2 sm:flex-row"
+          >
+            <img
+              class="rounded-full"
+              src="./assets/skills/express.png"
+              width="50px"
+              alt="AstroJS"
+            />
+            <h1 class="mx-4">express JS</h1>
+          </div>
+          <div
+            class="flex flex-col items-center justify-between h-20 m-2 sm:flex-row"
+          >
+            <img
+              class="rounded-full"
               src="./assets/skills/nxtjs.png"
               width="50px"
               alt="next"
@@ -247,39 +255,16 @@
             />
             <h1 class="mx-4">Astro JS</h1>
           </div>
-
-          <div
-            class="flex flex-col items-center justify-between h-20 m-2 sm:flex-row"
-          >
-            <img
-              class="rounded-full"
-              src="./assets/skills/github.png"
-              width="50px"
-              alt="AstroJS"
-            />
-            <h1 class="mx-4">Git/Github</h1>
-          </div>
-
-          <div
-            class="flex flex-col items-center justify-between h-20 m-2 sm:flex-row"
-          >
-            <img
-              class="rounded-full"
-              src="./assets/skills/express.png"
-              width="50px"
-              alt="AstroJS"
-            />
-            <h1 class="mx-4">express JS</h1>
-          </div>
         </div>
       </section>
 
-      <section id="intro" class="flex flex-col my-4 text-center">
+      <section id="outrp" class="flex flex-col my-4 text-center">
         <hr class="w-[40%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
         <p>vision</p>
         <p class="text-xl md:text-3xl w-[50%] mx-auto">
-          "Collaborating closely with clients to understand their unique needs
-          and translate them into stunning web solutions."
+          <span class="font-bold">"</span>Collaborating closely with clients to
+          understand their unique needs and translate them into stunning web
+          solutions.<span class="font-bold">"</span>
           <br />
           .
           <br />

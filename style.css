@@ -19,8 +19,6 @@ html {
 
 body {
   font-family: Montserrat;
-  /* background-color: var(--dark); */
-  /* font-family: "Roboto", sans-serif; */
 }
 /* Hide scrollbar for Chrome, Safari and Opera */
 .hidden-scrollbar::-webkit-scrollbar {
