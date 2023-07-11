@@ -33,7 +33,10 @@
   </head>
 
   <body class="box-border">
-    <header id="home" class="h-[80vh] v-full box-border bg-animated relative">
+    <header
+      id="home"
+      class="h-[75vh] v-full box-border bg-animated relative overflow-hidden"
+    >
       <div class="flex items-center justify-center bg-imaged bg-opacity-10">
         <div
           class="flex flex-col items-center justify-center p-4 border border-gray-100 md:flex-row rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10"
@@ -41,17 +44,20 @@
           <img
             src="./assets/profile.png"
             width="150px"
-            class="p-3 rounded-full"
+            class="m-3 border border-orange-400 rounded-full border-3"
             alt="me - Anandu Babu"
           />
           <div class="flex flex-col h-full px-4 border-l-4 border-orange-200">
             <h1 class="text-3xl font-bold md:text-6xl">Anandu Babu</h1>
-            <h3 class="text-xl">Web developer</h3>
-            <a href="https://www.linkedin.com/in/anandubabukr" class="text-sm">
+            <code class="text-xl">dream ● design ● develop; </code>
+            <a
+              href="https://www.linkedin.com/in/anandubabukr"
+              class="my-3 text-sm"
+            >
               @anandubabukr
             </a>
             <a
-              class="px-4 py-2 mt-4 text-sm text-center text-white bg-orange-500 rounded-xl md:block"
+              class="px-4 py-2 text-sm text-center text-white bg-orange-500 rounded-md md:block"
               href="resume.html"
               >My resume</a
             >
@@ -75,55 +81,20 @@
       </section>
 
       <section id="projects" class="box-border mt-4">
-        <h1 class="text-2xl text-center">Top 3 recent projects</h1>
+        <h1 class="text-2xl font-black text-center gradient-text">
+          Top 3 recent projects
+        </h1>
         <hr width="300px" class="mx-auto mt-4 border-orange-200" />
         <div class="box-border w-full py-2 caresol md:flex-row md:px-24">
           <!-- 1 -->
-          <div
-            class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl"
-          >
-            <img src="./assets/projects/p-1-metro.png" alt="metro LMS" />
-            <div
-              class="box-border px-4 py-2 border border-gray-100 text-slate-900 md:text-white md:bg-opacity-50 md:bg-black content rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
-            >
-              <h1 class="text-xl font-bold">Metro Apps Suite</h1>
-              <span class="mt-8">April 2023</span>
-              <p class="mt-3">
-                A complete solution for day to day bushiness challenges of LMS
-                with admin panel. delivery boy app, costumer app.
-              </p>
-              <p class="mt-2 text-xs">ReactJS, Tailwind, ElectronJS</p>
-            </div>
-          </div>
-          <!-- 2 -->
-          <div
-            class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl"
-          >
-            <img
-              src="./assets/projects/p2-i18.png"
-              alt="I18 translator UI SS"
-            />
-            <div
-              class="box-border px-4 py-2 border border-gray-100 text-slate-900 md:text-white md:bg-opacity-50 md:bg-black content rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
-            >
-              <h1 class="text-xl font-bold">I18 translator</h1>
-              <span class="mt-8">May 2023</span>
-              <p class="mt-3">
-                I18 translator is a react based desktop application using taury
-                to enable internationalization of a website using i18next JS.
-              </p>
-              <p class="mt-2 text-xs">ReactJS, Tailwind, Taury</p>
-            </div>
-          </div>
 
-          <!-- 3 -->
           <div
             class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl"
           >
             <!-- <img src="./assets/projects/p-3-webdevguru.png" alt="Web devguru" /> -->
             <img src="./assets/og-image.png" alt="Web devguru" />
             <div
-              class="box-border px-4 py-2 border border-gray-100 text-slate-900 md:text-white md:bg-opacity-50 md:bg-black content rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
+              class="box-border px-4 py-2 text-slate-900 md:text-white md:bg-opacity-60 md:bg-black content md:rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
             >
               <h1 class="text-xl font-bold">Web devGuru</h1>
               <span class="mt-8">Ongoing 2023</span>
@@ -134,11 +105,94 @@
               <p class="mt-2 text-xs">AstroJS ,ReactJS, Tailwind</p>
             </div>
           </div>
+          <!-- 2 -->
+
+          <div
+            class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl"
+          >
+            <img src="./assets/projects/p-1-metro.png" alt="metro LMS" />
+            <div
+              class="box-border px-4 py-2 text-slate-900 md:text-white md:bg-opacity-60 md:bg-black content md:rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
+            >
+              <h1 class="text-xl font-bold">Metro Apps Suite</h1>
+              <span class="mt-8">April 2023</span>
+              <p class="mt-3">
+                A complete solution for day to day bushiness challenges of LMS
+                with admin panel. delivery boy app, costumer app.
+              </p>
+              <p class="mt-2 text-xs">ReactJS, Tailwind, ElectronJS</p>
+            </div>
+          </div>
+          <!-- 3 -->
+
+          <div
+            class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl"
+          >
+            <img
+              src="./assets/projects/p2-i18.png"
+              alt="I18 translator UI SS"
+            />
+            <div
+              class="box-border px-4 py-2 text-slate-900 md:text-white md:bg-opacity-60 md:bg-black content md:rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
+            >
+              <h1 class="text-xl font-bold">I18 translator</h1>
+              <span class="mt-8">May 2023</span>
+              <p class="mt-3">
+                I18 translator is a react based desktop application using taury
+                to enable internationalization of a website using i18next JS.
+              </p>
+              <p class="mt-2 text-xs">ReactJS, Tailwind, Taury</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="skills" class="mt-4">
-        <h1 class="mb-4 text-2xl text-center">Skills</h1>
+      <!-- <hr class="w-[40%] mx-auto h-1 my-4 bg-orange-300 rounded-full" /> -->
+      <section id="promo" class="flex my-4 text-center md:mx-16">
+        <p
+          class="flex items-center justify-center my-0 text-xl font-bold text-center rounded-md md:text-base promo-item md:flex-col md:py-6 md:bg-slate-100"
+        >
+          <span>
+            <img
+              src="./assets/check.svg"
+              alt="check mark"
+              class="w-6 mx-4 md:w-10 md:my-4"
+            />
+          </span>
+          <span>Specialized Office apps</span>
+        </p>
+        <p
+          class="flex items-center justify-center my-0 text-xl font-bold text-center rounded-md md:text-base promo-item md:flex-col md:py-6 md:bg-slate-100"
+        >
+          <span>
+            <img
+              src="./assets/check.svg"
+              alt="check mark"
+              class="w-6 mx-4 md:w-10 md:my-4"
+            />
+          </span>
+          <span>Faster development</span>
+        </p>
+        <p
+          class="flex items-center justify-center my-0 text-xl font-bold text-center rounded-md md:text-base promo-item md:flex-col md:py-6 md:bg-slate-100"
+        >
+          <span>
+            <img
+              src="./assets/check.svg"
+              alt="check mark"
+              class="w-6 mx-4 md:w-10 md:my-4"
+            />
+          </span>
+          <span>Creative UI/UX Solutions</span>
+        </p>
+      </section>
+
+      <hr class="w-[40%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
+
+      <section id="skills">
+        <h1 class="mb-4 text-2xl font-black text-center gradient-text">
+          Skills
+        </h1>
         <hr width="300px" class="mx-auto mt-4 border-orange-200" />
 
         <div
@@ -258,7 +312,7 @@
         </div>
       </section>
 
-      <section id="outrp" class="flex flex-col my-4 text-center">
+      <section id="outro" class="flex flex-col my-4 text-center">
         <hr class="w-[40%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
         <p>vision</p>
         <p class="text-xl md:text-3xl w-[50%] mx-auto">
