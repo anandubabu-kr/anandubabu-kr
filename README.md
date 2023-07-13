@@ -2,7 +2,7 @@
 
 Frontend engineer with three years of experience in architecting and delivering enterprise applications. Managed and mentored agile teams in developing web applications using up-to-date tools and libraries.
 
-<img src='skill.png'  />
+<img src='skill.png' width='100%'  />
 <!-- ![skills](skill.png) -->
 
 - ReactJS
