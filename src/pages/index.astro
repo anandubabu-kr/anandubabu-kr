@@ -1,0 +1,119 @@
+---
+import Footer from "components/Footer.astro";
+import Projects from "components/Projects.astro";
+import Skills from "components/Skills.astro";
+import SocialLinks from "components/SocialLinks.astro";
+import IndexLayout from "layouts/IndexLayout.astro";
+---
+
+<IndexLayout>
+  <header id="home" class="h-[75vh] v-full box-border bg-animated relative">
+    <div class="flex items-center justify-center bg-imaged bg-opacity-10">
+      <div
+        class="flex flex-col items-center justify-center p-4 border border-gray-100 md:flex-row rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10"
+      >
+        <img
+          src="./assets/profile.png"
+          width="150px"
+          class="m-3 border border-orange-400 rounded-full border-3"
+          alt="me - Anandu Babu"
+        />
+        <div class="flex flex-col h-full px-4 border-l-4 border-orange-200">
+          <h1 class="text-3xl font-bold md:text-6xl">Anandu Babu</h1>
+          <code class="text-xl">dream ● design ● develop;</code>
+          <a
+            href="https://www.linkedin.com/in/anandubabukr"
+            class="my-3 text-sm"
+          >
+            @anandubabukr
+          </a>
+          <a
+            class="px-4 py-2 text-sm text-center text-white bg-orange-500 rounded-md md:block"
+            href="resume.html">My resume</a
+          >
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="intro" class="flex flex-col my-4 text-center">
+      <p class="text-xl md:text-3xl w-[50%] mx-auto">
+        Hey there,
+        <br />
+        I design and build high quality
+        <span class="font-bold /text-slate-900 decorated-text gradient-text">
+          frontend web applications
+        </span>
+        for clients 🔥
+      </p>
+      <hr class="w-[30%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
+    </section>
+
+    <Projects />
+
+    <hr class="w-[40%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
+
+    <section id="promo" class="flex my-4 text-center md:mx-16">
+      <p
+        class="flex items-center justify-center my-0 text-xl font-bold text-center rounded-md md:text-base promo-item md:flex-col md:py-6 md:bg-slate-100"
+      >
+        <span>
+          <img
+            src="./assets/check.svg"
+            alt="check mark"
+            class="w-6 mx-4 md:w-10 md:my-4"
+          />
+        </span>
+        <span>Specialized Office apps</span>
+      </p>
+      <p
+        class="flex items-center justify-center my-0 text-xl font-bold text-center rounded-md md:text-base promo-item md:flex-col md:py-6 md:bg-slate-100"
+      >
+        <span>
+          <img
+            src="./assets/check.svg"
+            alt="check mark"
+            class="w-6 mx-4 md:w-10 md:my-4"
+          />
+        </span>
+        <span>Faster development</span>
+      </p>
+      <p
+        class="flex items-center justify-center my-0 text-xl font-bold text-center rounded-md md:text-base promo-item md:flex-col md:py-6 md:bg-slate-100"
+      >
+        <span>
+          <img
+            src="./assets/check.svg"
+            alt="check mark"
+            class="w-6 mx-4 md:w-10 md:my-4"
+          />
+        </span>
+        <span>Creative UI/UX Solutions</span>
+      </p>
+    </section>
+
+    <Skills />
+
+    <section id="outro" class="flex flex-col my-4 text-center">
+      <hr class="w-[40%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
+      <p>vision</p>
+      <p class="text-xl md:text-3xl w-[50%] mx-auto">
+        <span class="font-bold">"</span>Collaborating closely with clients to
+        understand their unique needs and translate them into stunning web
+        solutions.<span class="font-bold">"</span>
+        <br />
+        .
+        <br />
+        <span class="font-bold /text-slate-900 decorated-text gradient-text">
+          Let's connect for your next projects
+        </span>
+      </p>
+
+      <hr class="w-[20%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
+      <p class="my-4 text-4xl">🔥</p>
+    </section>
+  </main>
+  <Footer />
+  <SocialLinks />
+</IndexLayout>
