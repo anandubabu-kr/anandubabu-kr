@@ -1,4 +1,7 @@
-/* @import "./svg-animation.css"; */
+@import "./svg-animation.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,7 +24,7 @@ html {
 }
 
 body {
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
