@@ -1,66 +1,49 @@
 ---
+import ProjectCard from "./ProjectCard.astro";
+
+const data = [
+  {
+    title: "Web devGuru",
+    description:
+      "Collection of react/javascript code snippets for developers with attractive UI along with level based tutorials",
+    image: "/assets/og-image.png",
+    tools: "AstroJS ,ReactJS, Tailwind",
+    date: "Ongoing 2023",
+  },
+
+  {
+    title: "Metro Apps Suite",
+    description:
+      " A complete solution for day to day bushiness challenges of LMS with admin panel. delivery boy app, costumer app.",
+    image: "/assets/projects/p-1-metro.png",
+    tools: "ReactJS, Tailwind, ElectronJS",
+    date: "April 2023",
+  },
+  {
+    title: "I18 translator",
+    description:
+      "I18 translator is a react based desktop application using taury to enable internationalization of a website using i18next JS.",
+    image: "/assets/projects/p2-i18.png",
+    tools: "ReactJS, Tailwind, Taury",
+    date: "May 2023",
+  },
+];
 ---
 
 <section id="projects" class="box-border mt-4">
-  <h1 class="text-2xl font-black text-center gradient-text">
-    Top 3 recent projects
-  </h1>
-  <hr width="300px" class="mx-auto mt-4 border-orange-200" />
+  <h1 class="text-2xl font-black text-center gradient-text">Recent projects</h1>
+  <hr class="mx-auto mt-4 border-orange-200" />
   <div class="box-border w-full py-2 caresol md:flex-row md:px-24">
-    <!-- 1 -->
-
-    <div
-      class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl"
-    >
-      <!-- <img src="./assets/projects/p-3-webdevguru.png" alt="Web devguru" /> -->
-      <img src="./assets/og-image.png" alt="Web devguru" />
-      <div
-        class="box-border px-4 py-2 text-slate-900 md:text-white md:bg-opacity-60 md:bg-black content md:rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
-      >
-        <h1 class="text-xl font-bold">Web devGuru</h1>
-        <span class="mt-8">Ongoing 2023</span>
-        <p class="mt-3">
-          Collection of react/javascript code snippets for developers with
-          attractive UI along with level based tutorials
-        </p>
-        <p class="mt-2 text-xs">AstroJS ,ReactJS, Tailwind</p>
-      </div>
-    </div>
-    <!-- 2 -->
-
-    <div
-      class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl"
-    >
-      <img src="./assets/projects/p-1-metro.png" alt="metro LMS" />
-      <div
-        class="box-border px-4 py-2 text-slate-900 md:text-white md:bg-opacity-60 md:bg-black content md:rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
-      >
-        <h1 class="text-xl font-bold">Metro Apps Suite</h1>
-        <span class="mt-8">April 2023</span>
-        <p class="mt-3">
-          A complete solution for day to day bushiness challenges of LMS with
-          admin panel. delivery boy app, costumer app.
-        </p>
-        <p class="mt-2 text-xs">ReactJS, Tailwind, ElectronJS</p>
-      </div>
-    </div>
-    <!-- 3 -->
-
-    <div
-      class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl"
-    >
-      <img src="./assets/projects/p2-i18.png" alt="I18 translator UI SS" />
-      <div
-        class="box-border px-4 py-2 text-slate-900 md:text-white md:bg-opacity-60 md:bg-black content md:rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
-      >
-        <h1 class="text-xl font-bold">I18 translator</h1>
-        <span class="mt-8">May 2023</span>
-        <p class="mt-3">
-          I18 translator is a react based desktop application using taury to
-          enable internationalization of a website using i18next JS.
-        </p>
-        <p class="mt-2 text-xs">ReactJS, Tailwind, Taury</p>
-      </div>
-    </div>
+    {
+      data.map((project) => (
+        <ProjectCard
+          title={project?.title}
+          description={project?.description}
+          image={project?.image}
+          tools={project?.tools}
+          date={project?.date}
+        />
+      ))
+    }
   </div>
 </section>
