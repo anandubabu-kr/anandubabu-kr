@@ -1,0 +1,29 @@
+---
+// import { Image } from "astro:assets";
+const { title, description, icon } = Astro.props;
+Image;
+---
+
+<div
+  class="flex flex-col justify-center hover:items-start promo-item group rounded-md py-2 md:pt-6 text-center bg-slate-100"
+>
+  <div
+    class="text-center mx-auto font-bold px-4 scale-125 duration-300 flex justify-center flex-col z-10 group-hover:scale-100"
+  >
+    <span class="mx-auto">
+      <img
+        class="w-12 md:w-8 md:my-2"
+        src="./assets/check.svg"
+        alt="check mark"
+      />
+    </span>
+    <span>
+      {title}
+    </span>
+  </div>
+  <p
+    class="px-4 mx-auto overflow-hidden group-hover:h-auto mt-4 md:mt-0 z-10 md:scale-0 group-hover:scale-100"
+  >
+    {description}
+  </p>
+</div>

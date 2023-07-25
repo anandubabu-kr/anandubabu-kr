@@ -1,6 +1,7 @@
 ---
 import Footer from "components/Footer.astro";
 import Projects from "components/Projects.astro";
+import PromoCard from "components/PromoCard.astro";
 import Skills from "components/Skills.astro";
 import SocialLinks from "components/SocialLinks.astro";
 import IndexLayout from "layouts/IndexLayout.astro";
@@ -55,42 +56,21 @@ import IndexLayout from "layouts/IndexLayout.astro";
     <hr class="w-[40%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
 
     <section id="promo" class="flex my-4 text-center md:mx-16">
-      <p
-        class="flex items-center justify-center my-0 text-xl font-bold text-center rounded-md md:text-base promo-item md:flex-col md:py-6 md:bg-slate-100"
-      >
-        <span>
-          <img
-            src="./assets/check.svg"
-            alt="check mark"
-            class="w-6 mx-4 md:w-10 md:my-4"
-          />
-        </span>
-        <span>Specialized Office apps</span>
-      </p>
-      <p
-        class="flex items-center justify-center my-0 text-xl font-bold text-center rounded-md md:text-base promo-item md:flex-col md:py-6 md:bg-slate-100"
-      >
-        <span>
-          <img
-            src="./assets/check.svg"
-            alt="check mark"
-            class="w-6 mx-4 md:w-10 md:my-4"
-          />
-        </span>
-        <span>Faster development</span>
-      </p>
-      <p
-        class="flex items-center justify-center my-0 text-xl font-bold text-center rounded-md md:text-base promo-item md:flex-col md:py-6 md:bg-slate-100"
-      >
-        <span>
-          <img
-            src="./assets/check.svg"
-            alt="check mark"
-            class="w-6 mx-4 md:w-10 md:my-4"
-          />
-        </span>
-        <span>Creative UI/UX Solutions</span>
-      </p>
+      <PromoCard
+        icon=""
+        title="Specialized Office apps"
+        description="Applications for your spesific office need, billing, customer managemnt,etc."
+      />
+      <PromoCard
+        icon="🔥"
+        title="Faster development"
+        description="Latest and powerfull technology with piplines enables faster developmemt and deployment."
+      />
+      <PromoCard
+        icon="🎨"
+        title="Creative UI/UX Solutions"
+        description="Experienced in working with major UI libraries and UI design system to pick the best fits your needs. "
+      />
     </section>
 
     <Skills />
@@ -110,6 +90,11 @@ import IndexLayout from "layouts/IndexLayout.astro";
         </span>
       </p>
 
+      <a
+        class="px-4 m-4 py-2 text-sm text-center w-fit mx-auto text-white bg-orange-500 rounded-md md:block"
+        href="resume.html"
+        >My resume &rightarrow;
+      </a>
       <hr class="w-[20%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
       <p class="my-4 text-4xl">🔥</p>
     </section>
