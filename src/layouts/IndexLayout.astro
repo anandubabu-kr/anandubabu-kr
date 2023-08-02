@@ -7,29 +7,48 @@ import "styles/global.css";
     <meta charset="UTF-8" />
     <title>Anandu Babu | Web developer Portfolio</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://anandubabu.netlify.app/favicon.png"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- TODO meta tags -->
+    <!--  meta tags -->
 
     <meta
       name="description"
-      content="Transforming Ideas into Stunning Web Realities | frontend web developer with more than  three years of experience and specialization in reactJS"
+      content="Transforming Ideas into Stunning Web Realities | More than  three years of experience and specialization in reactJS"
     />
-    <meta
-      property="og:title"
-      content="Anandu Babu - web developer  | Transforming Ideas into Stunning Web Realities | dream design develope"
-    />
+
+    <!-- newx -->
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:url" content="https://anandubabu.netlify.app" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Anandu Babu - web developer" />
     <meta
       property="og:description"
-      content="Transforming Ideas into Stunning Web Realities | Frontend web developer with more than  three years of experience and specialization in reactJS"
+      content="Transforming Ideas into Stunning Web Realities | More than  three years of experience and specialization in reactJS"
+    />
+    <meta
+      property="og:image"
+      content="https://anandubabu.netlify.app/assets/og-image.png"
     />
 
-    <meta name="generator" content={Astro.generator} />
+    <!-- twitter -->
 
-    <meta property="og:image" content="/assets/og-image.png" />
-  </head>
-  <body class="box-border">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@flickr" />
+    <meta name="twitter:title" content="Anandu Babu - web developer" />
+    <meta
+      name="twitter:description"
+      content="Transforming Ideas into Stunning Web Realities | More than  three years of experience and specialization in reactJS"
+    />
+    <meta
+      name="twitter:image"
+      content="https://anandubabu.netlify.app/assets/og-image.png"
+    />
+  </head><body class="box-border">
     <slot />
   </body>
 </html>
