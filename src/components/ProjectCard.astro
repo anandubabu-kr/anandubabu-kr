@@ -3,9 +3,13 @@ const { title, description, image, tools, date } = Astro.props;
 ---
 
 <div
-  class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid overflow-hidden card my-4 bg-slate-50 rounded-xl"
+  class="w-[80%] mx-auto box-border flex mt-8 flex-col md:grid md:w-[70%] md:bg-orange-100 overflow-hidden card my-4 rounded-xl px-2"
 >
-  <img src={image} alt="Web devguru" />
+  <img
+    src={image}
+    alt="Web devguru"
+    class="bg-orange-100 md:bg-transparent p-1"
+  />
   <div
     class="box-border px-4 py-2 text-slate-900 md:text-white md:bg-opacity-60 md:bg-black content md:rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm"
   >
