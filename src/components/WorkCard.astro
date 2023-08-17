@@ -1,13 +1,15 @@
 ---
-const { title, image, description } = Astro.props;
+const { title, link, image, description } = Astro.props;
 ---
 
-<div
-  class="flex border overflow-hidden rounded-md p-2 flex-col items-center justify-between h-20 m-2 sm:flex-row hover:saturate-0 duration-200"
+<a
+  href={link}
+  target="_blank"
+  class="work-item flex border overflow-hidden rounded-md p-2 flex-col items-center justify-center work-item m-2 sm:flex-row hover:saturate-100 saturate-0 duration-200"
 >
   <img src={image} width="100px" alt={title} />
   <div class="mx-4 text-center md:text-left">
-    <h1>
+    <h1 class="font-bold text-xl">
       {title}
     </h1>
 
@@ -15,4 +17,4 @@ const { title, image, description } = Astro.props;
       {description}
     </p>
   </div>
-</div>
+</a>

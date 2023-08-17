@@ -76,16 +76,14 @@ import IndexLayout from "layouts/IndexLayout.astro";
 
     <Skills />
 
-    <section id="skills" class="my-4 md:mx-16">
+    <section id="/skills" class="">
       <h1 class="mb-4 text-2xl font-black text-center gradient-text">
         Work Experience
       </h1>
       <hr class="mx-auto mt-4 border-orange-200" />
-      <div
-        id="items"
-        class="box-border flex flex-wrap items-center justify-center mt-7"
-      >
+      <div class="flex mx-4 my-4 text-center md:mx-16 promo">
         <WorkCard
+          link="https://www.tcs.com/"
           title="TCS"
           image="/assets/work/tcs.jpg"
           description="Software Engineer"
@@ -93,6 +91,7 @@ import IndexLayout from "layouts/IndexLayout.astro";
 
         <WorkCard
           title="ECS fin"
+          link="https://www.ecsfin.com/"
           image="/assets/work/ecs.png"
           description="Frontend Engineer, UI designer, UX researcher"
         />

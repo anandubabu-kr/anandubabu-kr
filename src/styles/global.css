@@ -163,16 +163,20 @@ menu {
   gap: 24px;
 }
 
-#promo {
+#promo,
+.promo {
   flex-wrap: wrap;
   gap: 24px;
 }
 
-.promo-item {
-  transition: 0.8s ease-in-out;
+.promo-item,
+.work-item {
   position: relative;
   flex: 1 0 300px;
   overflow: hidden;
+}
+.promo-item {
+  transition: 0.8s ease-in-out;
 }
 
 .promo-item > div,
