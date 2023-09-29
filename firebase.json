@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "dist",
+    "site": "anandubabu",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

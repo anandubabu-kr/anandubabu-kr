@@ -9,7 +9,9 @@ Frontend engineer with three years of experience in architecting and delivering 
 - tailwindCSS
 - Typescript
 - antd
+- Astro.js
 - NodeJS
+- Firebase
 - electronJS.
 
 ### 📫 Get in touch with me
