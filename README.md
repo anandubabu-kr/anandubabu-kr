@@ -19,7 +19,6 @@ React.js
 ● Node.js
 ● Firebase
 ● electron.js
-● Firebase
 
 ### 🔥Project highlights
 
