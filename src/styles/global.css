@@ -199,29 +199,11 @@ menu {
   height: 100%;
 }
 
-.card {
-  grid-template-columns: repeat(8, 1fr);
-  transition: 0.7s;
-}
-
-.card img {
-  grid-column: 1/5;
-  grid-row: 1/2;
-  height: 100%;
-  width: auto;
-}
-
 .card:hover {
   border: none;
   box-shadow: -5px 5px 0px #ee7752, -10px 10px 0px #ff9933,
     -15px 15px 0px #e73c7e;
   transform: translate(15px, -15px);
-}
-
-.card div.content {
-  grid-column: 4/-1;
-  grid-row: 1/2;
-  align-self: center;
 }
 
 main section {
