@@ -199,11 +199,27 @@ menu {
   height: 100%;
 }
 
+.card {
+  transform: translateX(-100%);
+  transition: all 700ms, opacity 2s;
+}
+
 .card:hover {
   border: none;
   box-shadow: -5px 5px 0px #ee7752, -10px 10px 0px #ff9933,
     -15px 15px 0px #e73c7e;
   transform: translate(15px, -15px);
+}
+
+.hidden,
+.fade-in {
+  opacity: 0;
+  filter: blur(10px);
+}
+.show {
+  filter: blur(0);
+  opacity: 1;
+  transform: translateX(0%);
 }
 
 main section {
