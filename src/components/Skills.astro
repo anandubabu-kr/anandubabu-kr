@@ -44,12 +44,12 @@ const data = [
 ];
 ---
 
-<section id="skills" class="my-4 md:mx-16">
+<section id="skills" class="my-4 md:my-16 lg:h-[50vh] md:mx-16">
   <h1 class="mb-4 text-2xl font-black text-center gradient-text">Skills</h1>
   <hr class="mx-auto mt-4 border-orange-200" />
   <div
     id="items"
-    class="box-border flex flex-wrap items-center justify-center mt-7"
+    class="box-border lg:w-[70%] lg:mx-auto flex flex-wrap items-center justify-center mt-7"
   >
     {data.map((item) => <SkillCard title={item.title} image={item.image} />)}
   </div>
