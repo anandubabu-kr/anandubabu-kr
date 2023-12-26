@@ -3,10 +3,10 @@ import ResumeLayout from "layouts/ResumeLayout.astro";
 ---
 
 <ResumeLayout>
-  <main class="mx-4 md:w-[900px] md:mx-auto">
+  <main class="mx-4 md:w-[900px] md:mx-auto leading-relaxed">
     <div class="topbar my-2">
       <h1 class="text-4xl font-bold text-blue-700">Anandu Babu</h1>
-      <h3 class="text-sm">
+      <h3 class="text-sm my-2">
         Frontend Engineer <span class="mx-4 text-sm"> //</span> Mentor
       </h3>
 
@@ -21,10 +21,12 @@ import ResumeLayout from "layouts/ResumeLayout.astro";
     </div>
 
     <div class="flex h-full border-t">
-      <section class="w-1/3 /bg-slate-100 p-2 border-r">
+      <section class="w-1/3 p-2 border-r">
         <div class="">
-          <h5 class="font-bold capitalize">contact</h5>
-          <p class="flex flex-col items-start justify-between mt-2 text-sm">
+          <!-- <h5 class="font-bold capitalize">contact</h5> -->
+          <p
+            class="flex flex-col items-start justify-between mt-2 text-sm leading-relaxed"
+          >
             <a href="https://anandubabu.web.app" class="flex items-center mr-3">
               <img
                 src="/assets/icons/resume-web.svg"
@@ -121,10 +123,16 @@ import ResumeLayout from "layouts/ResumeLayout.astro";
               <li
                 class="relative flex items-center before:content-['●'] before:text-blue-700 before:mx-1"
               >
-                CSS3 + SASS
+                CSS 3/SASS
               </li>
+
               <li
                 class="relative flex items-center before:content-['●'] before:text-blue-700 before:mx-1"
+              >
+                Redux
+              </li>
+              <li
+                class="relative /flex hidden items-center before:content-['●'] before:text-blue-700 before:mx-1"
               >
                 Product designing
               </li>
@@ -133,21 +141,23 @@ import ResumeLayout from "layouts/ResumeLayout.astro";
         </div>
 
         <div class="mt-2">
-          <h5 class="font-bold capitalize">Projects</h5>
+          <h5 class="font-bold capitalize">Projects (personal)</h5>
 
           <div>
             <article>
               <a href="https://jsontranslator.web.app/ " target="_blank">
-                <p class="after:content-['_↗']">JSON Translator</p>
-                <p class="text-sm text-justify py-1">
+                <p class="after:content-['_↗'] underline underline-offset-2">
+                  JSON Translator
+                </p>
+                <p class="text-sm py-1">
                   Free developers to seamlessly implement internationalization
                   and localization on their websites.
                 </p>
               </a>
 
-              <a href="https://jsontranslator.web.app/ " target="_blank">
-                <p class="after:content-['_↗']">Metro LMS app suite</p>
-                <p class="text-sm text-justify py-1">
+              <a>
+                <p class="">Metro LMS app suite</p>
+                <p class="text-sm py-1">
                   A complete solution for day to day bushiness challenges of LMS
                   with admin panel. delivery boy app, costumer app.
                 </p>
