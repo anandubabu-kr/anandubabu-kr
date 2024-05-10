@@ -1,8 +1,9 @@
 # Hi there 👋
 
-### 🚀 I'm here to turn Ideas into Spectacular Web Realities.
+## 🚀 I'm here to turn Ideas into Spectacular Web Realities.
 
-Seasoned Frontend Engineer specializing in architecting and delivering enterprise applications with three years of experience. Adept at guiding and mentoring agile teams to develop web applications using cutting-edge tools and libraries.
+**Seasoned Frontend Engineer specializing in architecting and delivering enterprise applications with three years of experience. Adept at guiding and mentoring agile teams to develop web applications using cutting-edge tools and libraries.**
+
 <br/>
 
 <img src='skill.png' width='100%'  />
@@ -11,14 +12,15 @@ Seasoned Frontend Engineer specializing in architecting and delivering enterpris
 <br/>
 
 React.js
-● tailwind CSS
+● Next.js
+● Astro.js
+● Tailwind CSS
 ● Typescript
 ● antd
-● Astro.js
-● Next.js
 ● Node.js
+● Express.js
 ● Firebase
-● electron.js
+● Electron.js
 
 ### 🔥Project highlights
 
@@ -26,10 +28,10 @@ React.js
 > react.js ⚡ tailwindcss ⚡ firebase ⚡ vite ⚡ typescript
 > <br/> 🔗 [jsontranslator.web.app](https://jsontranslator.web.app/)
 
-> **Metro Apps Suite** <br/> A complete solution for day to day bushiness challenges of LMS with admin panel. delivery boy app, costumer app.
-> <br/> 👉 desktop app with modern ui
-> <br/> 👉 admin panel
-> <br/> 👉 delivery boy app
+> **TideHub app Suite** <br/> A complete solution for day to day bushiness challenges of LMS with admin panel. delivery boy app, costumer app.
+> <br/> 👉 desktop app with modern ui and dashboard.
+> <br/> 👉 admin panel.
+> <br/> 👉 delivery boy app.
 > <br/> react.js ⚡ tailwindcss ⚡ electron.js ⚡ vite ⚡ figma ⚡ typescript
 
 > Developed multiple content-rich websites using Astro and Tailwind CSS, encompassing documentation, blogs, and more.

@@ -25,13 +25,13 @@ import ResumeLayout from "layouts/ResumeLayout.astro";
         <div class="">
           <!-- <h5 class="font-bold capitalize">contact</h5> -->
           <p class="flex flex-col items-start justify-between mt-2">
-            <a href="https://anandubabu.web.app" class="flex items-center mr-3">
+            <a class="flex items-center mr-3">
               <img
-                src="/assets/icons/resume-web.svg"
+                src="/assets/icons/phone.png"
                 class="w-3 h-3 mr-2"
-                alt="portfolio website"
+                alt="Phone"
               />
-              anandubabu.web.app
+              +91 9947975674
             </a>
             <a
               href="mailto:anandubabu.kr@gmail.com"
@@ -44,13 +44,13 @@ import ResumeLayout from "layouts/ResumeLayout.astro";
               />
               anandubabu.kr@gmail.com
             </a>
-            <a class="flex items-center mr-3">
+            <a href="https://anandubabu.web.app" class="flex items-center mr-3">
               <img
-                src="/assets/icons/phone.png"
+                src="/assets/icons/resume-web.svg"
                 class="w-3 h-3 mr-2"
-                alt="Phone"
+                alt="portfolio website"
               />
-              +91 9947975674
+              anandubabu.web.app
             </a>
             <a
               href="https://www.linkedin.com/in/anandubabukr"
@@ -84,12 +84,12 @@ import ResumeLayout from "layouts/ResumeLayout.astro";
               <li
                 class="relative flex items-center before:content-['●'] before:text-blue-700 before:mx-1"
               >
-                React.js
+                React.js + React query
               </li>
               <li
                 class="relative flex items-center before:content-['●'] before:text-blue-700 before:mx-1"
               >
-                Next.js
+                Next.js + SWR
               </li>
               <li
                 class="relative flex items-center before:content-['●'] before:text-blue-700 before:mx-1"
@@ -105,12 +105,12 @@ import ResumeLayout from "layouts/ResumeLayout.astro";
               <li
                 class="relative flex items-center before:content-['●'] before:text-blue-700 before:mx-1"
               >
-                Tailwind CSS
+                Tailwind 
               </li>
               <li
                 class="relative flex items-center before:content-['●'] before:text-blue-700 before:mx-1"
               >
-                antd/MUI
+                antd
               </li>
               <li
                 class="relative flex items-center before:content-['●'] before:text-blue-700 before:mx-1"
@@ -142,8 +142,8 @@ import ResumeLayout from "layouts/ResumeLayout.astro";
           <h5 class="font-bold capitalize">Projects (personal)</h5>
 
           <div>
-            <article>
-              <a href="https://jsontranslator.web.app/ " target="_blank">
+            <article class="hidden">
+              <a href="https://jsontranslator.web.app/" target="_blank">
                 <p class="after:content-['_↗'] underline underline-offset-2">
                   JSON Translator
                 </p>
@@ -162,14 +162,33 @@ import ResumeLayout from "layouts/ResumeLayout.astro";
                 </p>
               </a>
             </article>
+            <article>
+              <div>
+                <p class="text-xs text-blue-700 font-bold">JSON Translator</p>
+                <p class="py-1">
+                  Free developer tool to seamlessly implement translation.
+                  <span class="text-xs"
+                    >React+Typescript, Tailwind, Firebase</span
+                  >
+                </p>
+              </div>
+
+              <div>
+                <p class="text-xs text-blue-700 font-bold">TideHub app suite</p>
+                <p class="py-1">
+                  A feature rich solution for day to day bushiness challenges of
+                  LMS with admin panel.
+                  <span class="text-xs">UI/UX, React+Typescript, Tailwind</span>
+                </p>
+              </div>
+            </article>
           </div>
         </div>
 
         <div class="mt-2">
           <h5 class="font-bold capitalize">education</h5>
           <article class="flex flex-col justify-between">
-            <h2 class="">Bachelors of Science (B.Sc.)</h2>
-            <p>in Computer science</p>
+            <p class="">Bachelors of Science (B.Sc.) in Computer science</p>
             <h6 class="text-xs uppercase">June 2017 - March 2020</h6>
             <span class="text-sm"> University of Calicut</span>
           </article>
@@ -178,9 +197,11 @@ import ResumeLayout from "layouts/ResumeLayout.astro";
         <div class="mt-2">
           <h5 class="font-bold capitalize">Activities</h5>
           <div>
-            <h2>Frontend Mentor</h2>
+            <h6 class="text-xs">
+              <span>Frontend Mentor</span>
+              @ 10X Academy
+            </h6>
             <span class="uppercase text-xs">March 2022 - December 2022</span>
-            <h6 class="text-xs">10X Academy</h6>
           </div>
         </div>
       </section>
