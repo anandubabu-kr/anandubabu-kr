@@ -1,7 +1,5 @@
 @import "./svg-animation.css";
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,10 +19,6 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
 }
 
 .hidden-scrollbar::-webkit-scrollbar {
