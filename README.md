@@ -44,7 +44,8 @@ A comprehensive **business management solution** (LMS) with an intuitive admin p
 * 📱 **Delivery Web App:** Mobile-optimized web application for delivery personnel.
 * 🔄 **Ongoing Contribution:** Currently managing code reviews, ensuring high-quality and scalable solutions.
 
-
+* 🔗 **Demo:** [demo.tidehub.in](https://demo.tidehub.in/)
+ 
 ---
 
 #### 🚀 **gitsyncer** @2024
@@ -63,7 +64,6 @@ Developed multiple dynamic websites, including **documentation portals, blogs, a
 * 🔗 **Portfolio:** [anandubabu.web.app](https://anandubabu.web.app/)
 
 ---
-
 
 
 ### 📫 Get in touch with me
