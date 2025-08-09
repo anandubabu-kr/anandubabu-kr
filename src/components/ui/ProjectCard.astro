@@ -1,4 +1,6 @@
 ---
+import ImageCarousel from "./ImageCarousel.astro";
+
 const { title, description, image, tools, date } = Astro.props;
 ---
 
@@ -6,11 +8,12 @@ const { title, description, image, tools, date } = Astro.props;
   class="w-[80%] mx-auto box-border flex mt-8
    flex-col lg:flex-row md:w-[80%] overflow-hidden card my-4 rounded-xl px-2 fade-in"
 >
-  <img
+  <!-- <img
     src={image}
     alt={title}
     class="bg-orange-100 md:bg-transparent p-1 lg:w-1/2"
-  />
+  /> -->
+  <ImageCarousel arr={image} />
 
   <div
     class="box-border px-4 py-2 text-slate-900 md:bg-opacity-60

@@ -1,0 +1,66 @@
+---
+const { arr = [] } = Astro.props;
+---
+
+<image-carousel data-images={JSON.stringify(arr)}>
+  <img
+    class="bg-orange-100 md:bg-transparent rounded-md"
+    id="project-image"
+    alt=""
+  />
+</image-carousel>
+
+<script>
+  class ImageCarousel extends HTMLElement {
+    currentImageIndex: number;
+    imagePaths: any[];
+    intervalId: null;
+    constructor() {
+      super();
+      this.currentImageIndex = 0;
+      this.imagePaths = [];
+      this.intervalId = null;
+    }
+
+    connectedCallback() {
+      const img = this.querySelector("#project-image");
+
+      try {
+        this.imagePaths = JSON.parse(this.dataset.images);
+      } catch (e) {
+        console.error("Error parsing data-images attribute:", e);
+
+        img.src =
+          "https://placehold.co/600x400/CCCCCC/000000?text=Error+Loading+Images";
+        return;
+      }
+
+      if (this.imagePaths.length === 0) {
+        console.warn("No images provided in data-images.");
+
+        img.src = "https://placehold.co/600x400/CCCCCC/000000?text=No+Images";
+        return;
+      }
+
+      const changeImage = () => {
+        img.src = this.imagePaths[this.currentImageIndex];
+
+        this.currentImageIndex =
+          (this.currentImageIndex + 1) % this.imagePaths.length;
+      };
+
+      changeImage();
+
+      this.intervalId = setInterval(changeImage, 2000);
+      console.log("Image carousel started.");
+    }
+
+    disconnectedCallback() {
+      if (this.intervalId) {
+        clearInterval(this.intervalId);
+        console.log("Image carousel stopped.");
+      }
+    }
+  }
+  customElements.define("image-carousel", ImageCarousel);
+</script>
