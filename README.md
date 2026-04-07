@@ -1,72 +1,46 @@
-# Hi there 👋
+# Astro Starter Kit: Basics
 
-## 🚀 I'm here to turn Ideas into Spectacular Web Realities.
+```sh
+pnpm create astro@latest -- --template basics
+```
 
-Frontend Engineer with 5 years of experience in architecting and developing scalable enterprise applications. Expertise in React.js, Next.js, and modern frontend tooling, with a proven track record in driving architectural improvements, enhancing user experience, and mentoring teams.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-<br/>
+## 🚀 Project Structure
 
-<img src='skill.png' width='100%'  />
-<!-- ![skills](skill.png) -->
+Inside of your Astro project, you'll see the following folders and files:
 
-<br/>
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
+```
 
-React.js
-● Next.js
-● Astro.js
-● Tailwind CSS
-● Typescript
-● antd
-● Node.js
-● Express.js
-● Firebase
-● Electron.js
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
----
+## 🧞 Commands
 
-### 🔥 Featured Projects
+All commands are run from the root of the project, from a terminal:
 
-#### 🚀 **ECS React Assessment Platform** @2025
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `pnpm install`             | Installs dependencies                            |
+| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm build`           | Build your production site to `./dist/`          |
+| `pnpm preview`         | Preview your build locally, before deploying     |
+| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
-A robust **live coding assessment platform** integrating StackBlitz, designed to efficiently evaluate interview candidates' technical skills.
+## 👀 Want to learn more?
 
-#### 🚀 **Humanato Admin** @2025
-
-The administrative control panel for the Humanato app, enabling managers to oversee critical operations with dark theme support.
-
-- 📈 **Subscription Management:** Web-based application for tracking customer subscriptions with **dark theme support**.
-- 💾 **Data Management:** Robust features for data backup and continuous monitoring.
-
-#### 🚀 **TideHub App Suite** @2022 - presant
-
-A comprehensive **business management solution** (LMS) with an intuitive admin panel, a delivery management application, and a customer-facing app.
-
-- 🖥️ **Desktop App:** Modern, minimalist UI with a dashboard and **dark theme support**.
-- 📱 **Delivery Web App:** Mobile-optimized web application for delivery personnel.
-- 🔄 **Ongoing Contribution:** Currently managing code reviews, ensuring high-quality and scalable solutions.
-
-- 🔗 **Demo:** [demo.tidehub.in](https://demo.tidehub.in/)
-
-#### 🚀 **gitsyncer** @2024
-
-An internal **Bash CLI tool** simplifying complex Git operations into single commands for enhanced developer productivity.
-
-#### 🚀 **JSONTranslator** @2023
-
-A **React.js project** empowering developers to seamlessly implement internationalization and localization on their websites.
-
-- ⚠️ **Status:** Currently inactive.
-
-#### ✍️ **Content-Rich Websites (Astro & Tailwind CSS)**
-
-Developed multiple dynamic websites, including **documentation portals, blogs, and personal portfolios**, leveraging Astro and Tailwind CSS for modern design and performance.
-
-- 🔗 **Portfolio:** [anandubabu.web.app](https://anandubabu.web.app/)
-
----
-
-### 📫 Get in touch with me
-
-- Portfolio : [anandubabu.web.app](https://anandubabu.web.app/)
-- LinkedIn: [/in/anandubabukr/](https://www.linkedin.com/in/anandubabukr/)
-- Email: anandubabu.kr@gmail.com
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
