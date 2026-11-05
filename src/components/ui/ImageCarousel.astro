@@ -2,8 +2,8 @@
 const { arr = [], alt = "" } = Astro.props;
 ---
 
-<image-carousel data-images={JSON.stringify(arr)}>
-  <img class="bg-orange-100 md:bg-transparent rounded-md" alt={alt} />
+<image-carousel class="block lg:w-1/2 shrink-0" data-images={JSON.stringify(arr)}>
+  <img class="w-full rounded-md bg-accent-soft" alt={alt} />
 </image-carousel>
 
 <script>

@@ -9,107 +9,100 @@ import IndexLayout from "layouts/IndexLayout.astro";
 ---
 
 <IndexLayout>
-  <header id="home" class="h-[75vh] v-full
-  box-border bg-animated relative">
-    <div class="flex items-center justify-center bg-imaged bg-opacity-10">
+  <header
+    id="home"
+    class="relative flex items-center justify-center min-h-[75vh] py-12 px-4 bg-animated text-hero-ink"
+  >
+    <div class="bg-imaged absolute inset-0" aria-hidden="true"></div>
+    <div
+      class="relative z-10 flex flex-col items-center w-full max-w-3xl gap-4 p-4 border
+      border-white/40 md:flex-row md:gap-6 md:p-6 rounded-card backdrop-blur-sm bg-white/10"
+    >
+      <img
+        src="./assets/profile.png"
+        width="150"
+        height="150"
+        class="w-28 h-28 md:w-[150px] md:h-[150px] border-4 border-accent rounded-full object-cover"
+        alt="Portrait of Anandu Babu"
+      />
       <div
-        class="flex flex-col items-center justify-center p-4 border mx-4
-        border-gray-100 md:flex-row rounded-xl bg-clip-padding backdrop-filter
-        backdrop-blur-sm bg-opacity-10"
+        class="flex flex-col items-center text-center md:items-start md:text-left md:pl-6 md:border-l-4 border-accent/40"
       >
-        <img
-          src="./assets/profile.png"
-          width="150px"
-          class="m-3 border border-orange-400 rounded-full border-3"
-          alt="Portrait of Anandu Babu"
-        />
-        <div class="flex flex-col h-full px-4 border-l-4 border-orange-200">
-          <h1 class="text-3xl font-bold md:text-6xl">Anandu Babu</h1>
-          <p class="text-xl font-bold">Lead Frontend Engineer</p>
-          <code class="text-sm">React ● Next.js ● TypeScript</code>
-          <p class="my-3 text-sm">
-            5+ years building web apps for global banks and growing businesses.
-          </p>
-          <div class="flex gap-2">
-            <a
-              class="px-4 py-2 text-sm text-center text-white bg-orange-500
-              rounded-md md:block"
-              href="/resume">View resume</a
-            >
-            <a
-              class="px-4 py-2 text-sm text-center border border-orange-500
-              rounded-md md:block"
-              href="#contact">Start a project</a
-            >
-          </div>
+        <h1 class="text-4xl font-black md:text-6xl">Anandu Babu</h1>
+        <p class="mt-1 text-lg font-bold md:text-xl">Lead Frontend Engineer</p>
+        <code class="text-sm">React ● Next.js ● TypeScript</code>
+        <p class="my-3 text-sm max-w-sm">
+          5+ years building web apps for global banks and growing businesses.
+        </p>
+        <div class="flex flex-wrap justify-center gap-2 md:justify-start">
+          <a class="btn-primary" href="/resume">View resume</a>
+          <a class="btn-secondary" href="#contact">Start a project</a>
         </div>
       </div>
     </div>
   </header>
 
   <main id="main-content" tabindex="-1">
-    <section id="intro" class="flex flex-col my-4 text-center">
-      <h2 class="text-xl mt-6 md:text-3xl w-[50%] mx-auto">
-        I build <span class="font-bold decorated-text gradient-text">fast, scalable frontends</span><br />
+    <section id="intro" class="px-4 my-10 text-center">
+      <h2 class="mx-auto max-w-2xl text-2xl md:text-3xl">
+        I build <span class="font-bold decorated-text gradient-text"
+          >fast, scalable frontends</span
+        ><br />
         for product teams and businesses
       </h2>
 
-      <br />
-      <p class="mx-auto w-[60%]">
-        I'm a Lead Engineer with 5+ years of experience designing and shipping
-        React and Next.js applications, from multilingual banking platforms
-        used by clients around the world to custom tools that run day-to-day
-        operations for small businesses.
-      </p>
-      <p class="mx-auto w-[60%] mt-3">
-        I care about clean architecture, thoughtful UX, and helping teams ship
-        with confidence through component libraries, testing, and mentoring.
-      </p>
+      <div class="mx-auto mt-6 space-y-3 max-w-prose text-muted">
+        <p>
+          I'm a Lead Engineer with 5+ years of experience designing and shipping
+          React and Next.js applications, from multilingual banking platforms
+          used by clients around the world to custom tools that run day-to-day
+          operations for small businesses.
+        </p>
+        <p>
+          I care about clean architecture, thoughtful UX, and helping teams ship
+          with confidence through component libraries, testing, and mentoring.
+        </p>
+      </div>
 
-      <hr class="w-[30%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
+      <hr class="divider w-1/3" />
     </section>
 
     <Projects />
 
-    <hr class="w-[40%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
+    <hr class="divider w-2/5" />
 
-    <section aria-labelledby="help-heading">
-    <h2
-      id="help-heading"
-      class="text-2xl font-black text-center gradient-text md:mt-16"
-    >
-      How I can help
-    </h2>
-    <div
-      id="promo"
-      class="flex mx-4 my-4 md:py-16 text-center lg:h-[60vh] md:mx-16"
-    >
-      <PromoCard
-        title="Frontend leadership for your team"
-        description="Architecture that scales: monorepos, shared component libraries in Storybook, Jest/RTL and Cypress testing, secure auth flows, and mentoring that gets new developers productive quickly."
-      />
-      <PromoCard
-        title="Custom apps for your business"
-        description="Admin panels, dashboards, delivery and customer apps, and touch-friendly desktop apps for POS machines, built around how your business actually works."
-      />
-      <PromoCard
-        title="From design to production"
-        description="Figma designs turned into polished, responsive interfaces with design systems, dark mode, and multilingual support, ready for real users from day one."
-      />
-    </div>
+    <section aria-labelledby="help-heading" class="px-4 md:px-16 my-10">
+      <h2 id="help-heading" class="section-title gradient-text">
+        How I can help
+      </h2>
+      <div id="promo" class="flex my-4 text-center md:py-10">
+        <PromoCard
+          title="Frontend leadership for your team"
+          description="Architecture that scales: monorepos, shared component libraries in Storybook, Jest/RTL and Cypress testing, secure auth flows, and mentoring that gets new developers productive quickly."
+        />
+        <PromoCard
+          title="Custom apps for your business"
+          description="Admin panels, dashboards, delivery and customer apps, and touch-friendly desktop apps for POS machines, built around how your business actually works."
+        />
+        <PromoCard
+          title="From design to production"
+          description="Figma designs turned into polished, responsive interfaces with design systems, dark mode, and multilingual support, ready for real users from day one."
+        />
+      </div>
     </section>
 
     <Skills />
 
-    <section id="experience" aria-labelledby="experience-heading">
-      <h2
-        id="experience-heading"
-        class="mb-4 text-2xl font-black text-center gradient-text"
-      >
+    <section
+      id="experience"
+      aria-labelledby="experience-heading"
+      class="px-4 md:px-16 my-10"
+    >
+      <h2 id="experience-heading" class="section-title gradient-text">
         Where I've worked
       </h2>
-      <hr class="mx-auto mt-4 border-orange-200" />
-      <div class="flex mx-4 my-4 text-center md:mx-16 promo">
+      <hr class="border-line" />
+      <div class="flex my-4 text-center promo">
         <WorkCard
           title="Algosium"
           description="Lead Engineer · Nov 2025 – Present"
@@ -137,11 +130,13 @@ import IndexLayout from "layouts/IndexLayout.astro";
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      class="flex flex-col my-4 text-center"
+      class="flex flex-col px-4 my-10 text-center"
     >
-      <hr class="w-[40%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
-      <h2 id="contact-heading" class="my-6">Let's work together</h2>
-      <p class="text-xl md:text-3xl w-[50%] mx-auto">
+      <hr class="divider w-2/5" />
+      <h2 id="contact-heading" class="my-4 text-sm font-semibold uppercase tracking-widest text-muted">
+        Let's work together
+      </h2>
+      <p class="mx-auto max-w-2xl text-xl md:text-3xl">
         <span
           class="bg-gradient-to-r from-yellow-400 to-orange-600
           bg-no-repeat bg-left-bottom duration-700 ease-in-out bg-w-none hover:bg-w-full"
@@ -154,37 +149,35 @@ import IndexLayout from "layouts/IndexLayout.astro";
         </span>
       </p>
 
-      <div class="flex flex-col md:flex-row gap-6 justify-center mt-6 mx-auto">
-        <div>
+      <div
+        class="grid w-full max-w-2xl gap-4 mx-auto mt-8 sm:grid-cols-2"
+      >
+        <div class="flex flex-col items-center gap-3 p-6 rounded-card bg-surface">
           <h3 class="font-bold">Recruiters & hiring managers</h3>
+          <a class="btn-primary" href="/resume">View my resume &rightarrow;</a>
           <a
-            class="px-4 m-2 py-2 text-sm text-center w-fit mx-auto text-white bg-orange-500 rounded-md block"
-            href="/resume"
-            >View my resume &rightarrow;
-          </a>
-          <a
-            class="text-sm underline"
+            class="text-sm underline underline-offset-4"
             href="https://www.linkedin.com/in/anandubabukr"
             target="_blank"
             rel="noopener noreferrer">Connect on LinkedIn</a
           >
         </div>
-        <div>
+        <div class="flex flex-col items-center gap-3 p-6 rounded-card bg-surface">
           <h3 class="font-bold">Clients with a project</h3>
           <a
-            class="px-4 m-2 py-2 text-sm text-center w-fit mx-auto text-white bg-orange-500 rounded-md block"
+            class="btn-primary"
             href="mailto:anandubabu.kr@gmail.com?subject=Project%20enquiry"
-            >Email me &rightarrow;
-          </a>
+            >Email me &rightarrow;</a
+          >
           <a
-            class="text-sm underline"
+            class="text-sm underline underline-offset-4"
             href="https://wa.me/919947975674"
             target="_blank"
             rel="noopener noreferrer">Message on WhatsApp</a
           >
         </div>
       </div>
-      <hr class="w-[20%] mx-auto h-1 my-4 bg-orange-300 rounded-full" />
+      <hr class="divider w-1/5 mt-10" />
     </section>
   </main>
   <Footer />

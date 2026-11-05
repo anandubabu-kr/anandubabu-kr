@@ -46,11 +46,11 @@ const data = [
   aria-labelledby="projects-heading"
   class="box-border mt-4"
 >
-  <h2 id="projects-heading" class="text-2xl font-black text-center gradient-text">
+  <h2 id="projects-heading" class="section-title gradient-text">
     Selected work
   </h2>
-  <hr class="mx-auto mt-4 border-orange-200" />
-  <div class="box-border w-full py-2 caresol md:flex-row md:px-24">
+  <hr class="mx-4 border-line md:mx-24" />
+  <div class="box-border flex flex-col w-full px-4 py-2 caresol md:px-24">
     {
       data.map((project) => (
         <ProjectCard

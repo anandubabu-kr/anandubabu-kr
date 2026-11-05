@@ -6,7 +6,7 @@ const linkProps = link
   ? { href: link, target: "_blank", rel: "noopener noreferrer" }
   : {};
 const classes = [
-  "work-item flex border overflow-hidden rounded-md p-2 m-2",
+  "work-item flex border border-line bg-bg overflow-hidden rounded-card p-3",
   "flex-col items-center justify-center sm:flex-row",
   "md:saturate-0 hover:saturate-100 focus-visible:saturate-100 duration-200 fade-in",
 ].join(" ");
@@ -15,11 +15,11 @@ const classes = [
 <Tag {...linkProps} class={classes}>
   {
     image ? (
-      <img src={image} width="100px" alt="" />
+      <img src={image} width="100" class="rounded-md dark:bg-white" alt="" />
     ) : (
       <span
         aria-hidden="true"
-        class="flex items-center justify-center w-[100px] h-[100px] text-4xl font-black text-orange-500 bg-orange-50 rounded-md"
+        class="flex items-center justify-center w-[100px] h-[100px] text-4xl font-black text-accent bg-accent-soft rounded-md"
       >
         {title?.charAt(0)}
       </span>
@@ -30,7 +30,7 @@ const classes = [
       {title}
     </h3>
 
-    <p class="text-xs block">
+    <p class="text-xs block text-muted">
       {description}
     </p>
   </div>

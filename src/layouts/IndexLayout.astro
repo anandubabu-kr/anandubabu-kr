@@ -1,10 +1,19 @@
 ---
 import "styles/global.css";
 
+interface Props {
+  title?: string;
+  description?: string;
+  /** Keep the page out of search results (e.g. 404). */
+  noindex?: boolean;
+}
+
 const site = "https://anandubabu.web.app";
-const title = "Anandu Babu | Lead Frontend Engineer · React & Next.js";
-const description =
-  "Lead Frontend Engineer with 5+ years building scalable React and Next.js apps for global banks and growing businesses. Open to new roles and freelance projects.";
+const {
+  title = "Anandu Babu | Lead Frontend Engineer · React & Next.js",
+  description = "Lead Frontend Engineer with 5+ years building scalable React and Next.js apps for global banks and growing businesses. Open to new roles and freelance projects.",
+  noindex = false,
+} = Astro.props;
 const image = `${site}/assets/og-image.png`;
 
 const person = {
@@ -43,7 +52,29 @@ const person = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Anandu Babu" />
-    <link rel="canonical" href={site + "/"} />
+    {
+      noindex ? (
+        <meta name="robots" content="noindex" />
+      ) : (
+        <link rel="canonical" href={site + "/"} />
+      )
+    }
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0f1115"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap"
+    />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
 
@@ -65,11 +96,15 @@ const person = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
 
-    <script type="application/ld+json" set:html={JSON.stringify(person)} />
+    {
+      !noindex && (
+        <script type="application/ld+json" set:html={JSON.stringify(person)} />
+      )
+    }
     <!-- reveals .fade-in elements on scroll (they start at opacity 0) -->
     <script src="../scripts/index.js"></script>
   </head>
-  <body class="box-border">
+  <body class="box-border bg-bg text-ink font-body antialiased">
     <a href="#main-content" class="skip-link">Skip to content</a>
     <slot />
   </body>
