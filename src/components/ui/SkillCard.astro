@@ -9,8 +9,8 @@ const { title, icon } = Astro.props;
 ---
 
 <li
-  class="flex flex-col items-center justify-center gap-2 px-4 py-3 m-1 rounded-card sm:flex-row"
+  class="flex flex-col items-center justify-center gap-2 px-3 py-5 text-center border w-[calc(50%-0.375rem)] sm:w-32 md:w-[8.5rem] skill-tile fade-in rounded-card border-line bg-bg"
 >
-  <Icon name={icon} brandColor class="w-8 h-8 md:w-9 md:h-9" />
-  <h3 class="text-sm md:text-base">{title}</h3>
+  <Icon name={icon} brandColor class="w-9 h-9" />
+  <h3 class="text-sm font-semibold">{title}</h3>
 </li>

@@ -2,30 +2,46 @@
 import ImageCarousel from "./ImageCarousel.astro";
 import Icon from "./Icon.astro";
 
-const { title, description, image, tools, date } = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+  image: string[];
+  tools: string;
+  date: string;
+  /** Put the screenshot on the right on wide screens (alternating layout). */
+  reverse?: boolean;
+}
+const { title, description, image, tools, date, reverse = false } = Astro.props;
+const toolList = tools.split(",").map((t) => t.trim()).filter(Boolean);
 ---
 
 <article
-  class="w-full md:w-[80%] mx-auto box-border flex mt-8 gap-4 bg-surface
-   flex-col lg:flex-row overflow-hidden card my-4 rounded-card p-3 fade-in"
+  class:list={[
+    "card fade-in flex flex-col gap-6 w-full p-4 mx-auto my-6 border rounded-card border-line bg-surface md:w-[85%] lg:items-center",
+    reverse ? "lg:flex-row-reverse" : "lg:flex-row",
+  ]}
 >
   <ImageCarousel arr={image} alt={`${title} screenshot`} />
 
-  <div
-    class="box-border px-2 py-2 text-ink lg:w-1/2
-      md:rounded-xl"
-  >
-    <h3 class="text-xl font-bold">
-      {title}
-    </h3>
-    <p class="flex items-center gap-1.5 mt-1 text-sm text-muted">
+  <div class="flex flex-col gap-3 lg:w-1/2 lg:px-4">
+    <p class="flex items-center gap-1.5 text-sm text-muted">
       <Icon name="calendar" class="w-4 h-4" />
       <span class="sr-only">Date:</span>{date}
     </p>
-    <p class="mt-3">{description}</p>
-    <p class="flex items-center gap-1.5 mt-3 text-xs font-code text-muted">
-      <Icon name="wrench" class="w-4 h-4" />
-      <span class="sr-only">Built with:</span>{tools}
-    </p>
+    <h3 class="text-2xl font-bold">{title}</h3>
+    <p class="leading-relaxed">{description}</p>
+    <div class="flex items-center gap-2 mt-1">
+      <Icon name="wrench" class="w-4 h-4 text-muted" />
+      <span class="sr-only">Built with:</span>
+      <ul class="flex flex-wrap gap-2">
+        {
+          toolList.map((t) => (
+            <li class="px-2.5 py-1 text-xs font-semibold rounded-full font-code bg-accent-soft text-accent">
+              {t}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
 </article>

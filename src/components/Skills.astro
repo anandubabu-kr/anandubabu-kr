@@ -5,7 +5,9 @@ import type { IconName } from "./ui/Icon.astro";
 const data: { title: string; icon: IconName }[] = [
   { title: "React", icon: "react" },
   { title: "Next.js", icon: "nextjs" },
+  { title: "Remix", icon: "remix" },
   { title: "TypeScript", icon: "typescript" },
+  { title: "Storybook", icon: "storybook" },
   { title: "Astro", icon: "astro" },
   { title: "Tailwind CSS", icon: "tailwind" },
   { title: "Figma", icon: "figma" },
@@ -20,15 +22,14 @@ const data: { title: string; icon: IconName }[] = [
 <section
   id="skills"
   aria-labelledby="skills-heading"
-  class="px-4 my-10 md:my-16 md:px-16"
+  class="px-4 py-12 md:px-16 bg-surface/60"
 >
+  <p class="eyebrow">Stack</p>
   <h2 id="skills-heading" class="section-title gradient-text">
     Tools I work with
   </h2>
-  <hr class="border-line" />
   <ul
-    id="items"
-    class="box-border flex flex-wrap items-center justify-center gap-2 lg:w-[70%] lg:mx-auto mt-7"
+    class="flex flex-wrap justify-center max-w-4xl gap-3 mx-auto"
   >
     {data.map((item) => <SkillCard title={item.title} icon={item.icon} />)}
   </ul>

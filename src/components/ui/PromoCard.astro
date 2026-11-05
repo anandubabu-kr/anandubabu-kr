@@ -9,34 +9,15 @@ interface Props {
 const { title, description, icon } = Astro.props;
 ---
 
-<!--
-  The description is revealed on hover. tabindex="0" lets keyboard users
-  reach the card, and the group-focus classes reveal it on focus too.
--->
+<!-- Content is always visible; the gradient sweep is a hover flourish (global.css). -->
 <article
-  tabindex="0"
-  class="flex flex-col justify-center hover:items-start focus:items-start
-   promo-item group rounded-md py-4 md:pt-6 text-center
-    bg-surface fade-in"
+  class="flex flex-col items-start gap-3 p-6 text-left border promo-item rounded-card border-line bg-surface fade-in"
 >
-  <div
-    class="text-center mx-auto font-bold px-4 scale-125
-     duration-300 flex justify-center flex-col z-10
-      group-hover:scale-100 group-focus:scale-100"
+  <span
+    class="flex items-center justify-center w-12 h-12 rounded-full promo-icon bg-accent-soft text-accent"
   >
-    <span
-      class="flex items-center justify-center mx-auto mb-2 w-12 h-12 rounded-full bg-accent-soft text-accent md:my-2"
-    >
-      <Icon name={icon} class="w-6 h-6" />
-    </span>
-    <h3 class="md:font-bold">
-      {title}
-    </h3>
-  </div>
-  <p
-    class="px-4 mx-auto overflow-hidden group-hover:h-auto group-focus:h-auto mt-4
-     md:mt-0 z-10 md:scale-0 group-hover:scale-100 group-focus:scale-100"
-  >
-    {description}
-  </p>
+    <Icon name={icon} class="w-6 h-6" />
+  </span>
+  <h3 class="text-lg font-bold">{title}</h3>
+  <p class="text-sm leading-relaxed">{description}</p>
 </article>

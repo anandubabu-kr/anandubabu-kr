@@ -49,6 +49,8 @@ const person = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Mark JS as available before paint; reveal animations only hide content when this is set. -->
+    <script is:inline>document.documentElement.classList.add("js");</script>
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Anandu Babu" />

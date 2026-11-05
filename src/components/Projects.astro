@@ -44,21 +44,22 @@ const data = [
 <section
   id="projects"
   aria-labelledby="projects-heading"
-  class="box-border mt-4"
+  class="px-4 py-12 md:px-16"
 >
+  <p class="eyebrow">Portfolio</p>
   <h2 id="projects-heading" class="section-title gradient-text">
     Selected work
   </h2>
-  <hr class="mx-4 border-line md:mx-24" />
-  <div class="box-border flex flex-col w-full px-4 py-2 caresol md:px-24">
+  <div class="flex flex-col w-full">
     {
-      data.map((project) => (
+      data.map((project, i) => (
         <ProjectCard
-          title={project?.title}
-          description={project?.description}
-          image={project?.image}
-          tools={project?.tools}
-          date={project?.date}
+          title={project.title}
+          description={project.description}
+          image={project.image}
+          tools={project.tools}
+          date={project.date}
+          reverse={i % 2 === 1}
         />
       ))
     }

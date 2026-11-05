@@ -1,14 +1,43 @@
 ---
+interface Props {
+  arr?: string[];
+  alt?: string;
+}
 const { arr = [], alt = "" } = Astro.props;
 ---
 
-<image-carousel class="block lg:w-1/2 shrink-0" data-images={JSON.stringify(arr)}>
-  <img class="w-full rounded-md bg-accent-soft" alt={alt} />
+<!--
+  Screenshot carousel. The first image renders on the server (works without
+  JS). With several images it auto-advances every 4s, pauses on hover/focus,
+  never auto-advances under reduced motion, and has dot buttons to pick one.
+-->
+<image-carousel class="block shrink-0 lg:w-1/2" data-images={JSON.stringify(arr)}>
+  <div class="overflow-hidden rounded-md bg-accent-soft aspect-[16/10]">
+    <img
+      src={arr[0]}
+      alt={alt}
+      loading="lazy"
+      class="object-contain w-full h-full transition-opacity duration-300"
+    />
+  </div>
+  {
+    arr.length > 1 && (
+      <div class="flex justify-center mt-2" role="group" aria-label="Screenshots">
+        {arr.map((_, i) => (
+          <button
+            type="button"
+            class="carousel-dot"
+            data-dot={i}
+            aria-label={`Show screenshot ${i + 1} of ${arr.length}`}
+            aria-current={i === 0 ? "true" : undefined}
+          />
+        ))}
+      </div>
+    )
+  }
 </image-carousel>
 
 <script>
-  // Cycles through project screenshots. Rotation is skipped entirely when the
-  // visitor prefers reduced motion, and pauses while the pointer is over it.
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   class ImageCarousel extends HTMLElement {
@@ -16,23 +45,30 @@ const { arr = [], alt = "" } = Astro.props;
     images: string[] = [];
     intervalId: ReturnType<typeof setInterval> | null = null;
     img: HTMLImageElement | null = null;
+    dots: HTMLButtonElement[] = [];
 
     connectedCallback() {
       this.img = this.querySelector("img");
+      this.dots = [...this.querySelectorAll<HTMLButtonElement>("[data-dot]")];
       try {
         this.images = JSON.parse(this.dataset.images ?? "[]");
-      } catch (e) {
-        console.error("Error parsing data-images attribute:", e);
+      } catch {
+        this.images = [];
       }
-      if (!this.img || this.images.length === 0) return;
+      if (!this.img || this.images.length < 2) return;
 
-      this.show();
-      if (this.images.length > 1) {
-        this.start();
-        this.addEventListener("mouseenter", this.stop);
-        this.addEventListener("mouseleave", this.start);
-        reduceMotion.addEventListener("change", this.start);
-      }
+      this.dots.forEach((dot) =>
+        dot.addEventListener("click", () => {
+          this.go(Number(dot.dataset.dot));
+          this.start();
+        })
+      );
+      this.addEventListener("mouseenter", this.stop);
+      this.addEventListener("mouseleave", this.start);
+      this.addEventListener("focusin", this.stop);
+      this.addEventListener("focusout", this.start);
+      reduceMotion.addEventListener("change", this.start);
+      this.start();
     }
 
     disconnectedCallback() {
@@ -40,18 +76,28 @@ const { arr = [], alt = "" } = Astro.props;
       reduceMotion.removeEventListener("change", this.start);
     }
 
-    show = () => {
-      if (this.img) this.img.src = this.images[this.index];
+    go = (i: number) => {
+      const img = this.img;
+      if (!img || i === this.index) return;
+      this.index = i;
+      this.dots.forEach((d, n) =>
+        n === i ? d.setAttribute("aria-current", "true") : d.removeAttribute("aria-current")
+      );
+      // cross-fade: fade out, swap, fade back in once loaded
+      img.style.opacity = "0";
+      window.setTimeout(() => {
+        img.onload = () => (img.style.opacity = "1");
+        img.src = this.images[i];
+        if (img.complete) img.style.opacity = "1";
+      }, reduceMotion.matches ? 0 : 200);
     };
 
-    next = () => {
-      this.index = (this.index + 1) % this.images.length;
-      this.show();
-    };
+    next = () => this.go((this.index + 1) % this.images.length);
 
     start = () => {
       this.stop();
-      if (!reduceMotion.matches) this.intervalId = setInterval(this.next, 2000);
+      if (!reduceMotion.matches && !this.matches(":hover, :focus-within"))
+        this.intervalId = setInterval(this.next, 4000);
     };
 
     stop = () => {

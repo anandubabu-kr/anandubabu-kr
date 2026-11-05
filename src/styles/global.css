@@ -114,7 +114,11 @@ main:focus {
     @apply btn border border-accent text-current hover:bg-accent-soft;
   }
   .section-title {
-    @apply mb-4 text-center text-2xl font-black md:text-3xl;
+    @apply mb-8 text-center text-3xl font-black md:text-4xl;
+  }
+  /* small label above section titles */
+  .eyebrow {
+    @apply mb-2 text-center text-xs font-bold uppercase tracking-[0.2em] text-accent;
   }
   .divider {
     @apply mx-auto my-6 h-1 rounded-full border-0 bg-accent/30;
@@ -234,49 +238,156 @@ main:focus {
   background: transparent;
 }
 
-/* ---------- Floating quick-contact rail ---------- */
-menu {
-  height: 0px;
-  z-index: 5;
+/* =====================================================================
+   Site navigation
+   Transparent over the hero, frosted once the page scrolls
+   (data-scrolled is set by src/scripts/index.js).
+   ===================================================================== */
+html {
+  scroll-padding-top: 4.5rem; /* keep anchored headings clear of the nav */
 }
 
-/* ---------- Card grids (mobile-first: one column, then wrap) ---------- */
-.caresol,
-#promo,
-.promo {
-  flex-wrap: wrap;
-  gap: 24px;
+.site-nav {
+  color: rgb(var(--c-hero-ink));
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.site-nav[data-scrolled="true"],
+.site-nav[data-menu-open="true"] {
+  background-color: rgb(var(--c-bg) / 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgb(var(--c-line)), 0 8px 24px -16px rgb(0 0 0 / 0.25);
+  color: rgb(var(--c-ink));
 }
 
-.promo-item,
-.work-item {
+.nav-link {
   position: relative;
-  flex: 1 1 280px;
-  min-width: 0;
-  overflow: hidden;
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.3rem;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--text-grad-1), var(--text-grad-2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link[aria-current="true"]::after {
+  transform: scaleX(1);
+}
+.nav-link[aria-current="true"] {
+  color: rgb(var(--c-accent));
+}
+
+/* menu / close icon swap on the mobile toggle */
+[data-menu-button][aria-expanded="true"] .icon-open,
+[data-menu-button][aria-expanded="false"] .icon-close {
+  display: none;
+}
+
+.scroll-progress {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+/* ---------- Back to top ---------- */
+.back-to-top {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+.back-to-top[data-visible] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+/* =====================================================================
+   Hero card: gentle 3D tilt + a light that follows the pointer
+   (--mx / --my and the transform are set by src/scripts/index.js)
+   ===================================================================== */
+.tilt-card {
+  background-image: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 0%),
+    rgb(255 255 255 / 0.28),
+    transparent 45%
+  );
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: transform;
+}
+
+.status-dot {
+  position: relative;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: #16a34a;
+}
+.status-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* =====================================================================
+   Scroll reveal
+   Only hidden when JS is running (html.js), so content can never get
+   stuck invisible. Items fade up once, staggered by --i.
+   ===================================================================== */
+.js .fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.fade-in {
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.35s ease, background-color 0.35s ease, border-color 0.35s ease;
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.js .fade-in.show {
+  opacity: 1;
+  transform: none;
+}
+/* once revealed, hover effects should respond instantly */
+.fade-in.show:hover {
+  transition-delay: 0ms;
+}
+
+/* =====================================================================
+   Cards
+   ===================================================================== */
+#promo {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
 }
 
 .promo-item {
-  transition: 0.8s ease-in-out;
-  transition-delay: 300ms;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
-
-.promo-item > div,
-.promo-item > p {
-  transition-property: flex;
-  transition: 420ms ease-in-out !important;
-}
-
-/* gradient wipe on hover/focus (desktop only, see media query below) */
+/* signature gradient sweep, rising from the bottom edge */
 .promo-item::before {
   content: "";
   position: absolute;
-  width: 100%;
-  z-index: 5;
-  height: 5%;
-  bottom: 0px;
-  left: 0;
-  transition: 0.4s ease-in-out;
+  inset: auto 0 0 0;
+  z-index: -1;
+  height: 4px;
+  transition: height 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
   background: linear-gradient(
     140deg,
     hsl(50, 100%, 50%),
@@ -284,38 +395,81 @@ menu {
     #ee7752
   );
 }
-.promo-item:hover::before,
-.promo-item:focus::before {
+.promo-item:hover::before {
   height: 100%;
 }
-/* text sits on the bright wipe, so keep it dark */
-.promo-item:hover,
-.promo-item:focus {
-  color: #1c1917;
+.promo-item:hover {
+  color: #1c1917; /* text sits on the bright sweep */
+}
+.promo-item:hover .promo-icon {
+  background: rgb(255 255 255 / 0.7);
+  transform: rotate(-8deg) scale(1.08);
+}
+.promo-icon {
+  transition: transform 0.35s ease, background-color 0.35s ease;
 }
 
-.card {
-  transform: translateX(-100%);
-  transition: all 700ms, opacity 2s;
-}
-
-.card:hover {
+/* project cards keep the stacked-shadow hover */
+.card.show:hover {
   box-shadow: -5px 5px 0px #ee7752, -10px 10px 0px #ff9933,
     -15px 15px 0px #e73c7e;
-  transform: translate(15px, -15px);
+  transform: translate(8px, -8px);
 }
 
-.fade-in {
-  opacity: 0;
-  filter: blur(10px);
-}
-.show {
-  filter: blur(0);
-  opacity: 1;
-  transform: translateX(0%);
+/* skill tiles */
+.skill-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px -12px rgb(var(--c-accent) / 0.45);
+  border-color: rgb(var(--c-accent) / 0.4);
 }
 
-/* ---------- Reduced motion ---------- */
+/* experience timeline */
+.timeline-dot {
+  box-shadow: 0 0 0 4px rgb(var(--c-bg)), 0 0 0 6px rgb(var(--c-accent) / 0.25);
+}
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.25);
+}
+.timeline-item:hover .work-logo {
+  filter: none;
+}
+.work-logo {
+  filter: grayscale(1);
+  transition: filter 0.3s ease;
+}
+
+/* contact cards */
+.lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -20px rgb(0 0 0 / 0.35);
+}
+
+/* ---------- Screenshot carousel ---------- */
+.carousel-dot {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.carousel-dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgb(var(--c-ink) / 0.25);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+.carousel-dot[aria-current="true"]::after {
+  width: 20px;
+  background: rgb(var(--c-accent));
+}
+
+/* =====================================================================
+   Reduced motion: still page, everything visible immediately
+   ===================================================================== */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -327,30 +481,33 @@ menu {
     transition-delay: 0ms !important;
   }
 
-  .fade-in,
-  .card {
+  .js .fade-in {
     opacity: 1;
-    filter: none;
     transform: none;
   }
 
-  .card:hover {
-    transform: none;
+  .card.show:hover,
+  .skill-tile:hover,
+  .lift:hover,
+  .tilt-card {
+    transform: none !important;
   }
 }
 
-/* Small screens: no slide-in offset or hover wipe (touch has no hover). */
-@media (max-width: 767px) {
-  .card,
-  .card:hover {
-    transform: none;
-  }
+/* Touch screens: no hover sweep or hover lift. */
+@media (hover: none) {
   .promo-item::before {
     display: none;
   }
-  .promo-item:hover,
-  .promo-item:focus {
+  .promo-item:hover {
     color: inherit;
+  }
+  .card.show:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .work-logo {
+    filter: none;
   }
 }
 
@@ -363,5 +520,13 @@ menu {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
   }
 }
