@@ -4468,7 +4468,12 @@ git bisect run npm test</pre
       function renderFlow() {
         const F = FLOWS[FS.key];
         const max = F.steps.length;
-        if (FS.step == null) FS.step = max;
+        // New map (first load, tab switch, or "pick a strategy" card):
+        // start at step 1 in walk-through mode. "Show all" jumps to the final state.
+        if (FS.step == null) {
+          FS.step = 1;
+          FS.walk = true;
+        }
         $("#flowTabs").innerHTML = Object.entries(FLOWS)
           .map(
             ([k, f]) =>
