@@ -282,10 +282,10 @@ html {
   transition: transform 0.3s ease;
 }
 .nav-link:hover::after,
-.nav-link[aria-current="true"]::after {
+.nav-link[aria-current]::after {
   transform: scaleX(1);
 }
-.nav-link[aria-current="true"] {
+.nav-link[aria-current] {
   color: rgb(var(--c-accent));
 }
 

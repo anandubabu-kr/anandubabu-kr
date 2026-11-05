@@ -1,12 +1,30 @@
 ---
 import Icon from "./ui/Icon.astro";
 
+interface Props {
+  /** Which page we're on. Section links are in-page on home, "/#..." elsewhere. */
+  current?: "home" | "blog";
+}
+const { current = "home" } = Astro.props;
+const onHome = current === "home";
+
+const sections = [
+  { id: "projects", label: "Work" },
+  { id: "services", label: "Services" },
+  { id: "skills", label: "Skills" },
+  { id: "experience", label: "Experience" },
+  { id: "contact", label: "Contact" },
+];
+
+// `spy` links get the scroll-position highlight (home only).
 const links = [
-  { href: "#projects", label: "Work" },
-  { href: "#services", label: "Services" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
+  ...sections.map((s) => ({
+    href: onHome ? `#${s.id}` : `/#${s.id}`,
+    label: s.label,
+    spy: onHome,
+    page: false,
+  })),
+  { href: "/learning", label: "Blog", spy: false, page: current === "blog" },
 ];
 ---
 
@@ -17,16 +35,21 @@ const links = [
 -->
 <div data-site-nav data-scrolled="false" class="site-nav fixed inset-x-0 top-0 z-40">
   <div class="flex items-center justify-between h-16 max-w-6xl px-4 mx-auto">
-    <a href="#home" class="text-lg font-black tracking-tight">
+    <a href={onHome ? "#home" : "/"} class="text-lg font-black tracking-tight">
       Anandu<span class="text-accent">.</span>
     </a>
 
-    <nav aria-label="Primary" class="hidden md:block">
+    <nav aria-label="Primary" class="hidden lg:block">
       <ul class="flex items-center gap-1">
         {
           links.map((l) => (
             <li>
-              <a href={l.href} class="nav-link" data-nav-link>
+              <a
+                href={l.href}
+                class="nav-link"
+                data-nav-link={l.spy ? "" : undefined}
+                aria-current={l.page ? "page" : undefined}
+              >
                 {l.label}
               </a>
             </li>
@@ -45,7 +68,7 @@ const links = [
         aria-expanded="false"
         aria-controls="mobile-menu"
         aria-label="Open menu"
-        class="flex items-center justify-center w-10 h-10 rounded-md md:hidden hover:bg-accent-soft"
+        class="flex items-center justify-center w-10 h-10 rounded-md lg:hidden hover:bg-accent-soft"
       >
         <span class="icon-open"><Icon name="menu" class="w-6 h-6" /></span>
         <span class="icon-close"><Icon name="close" class="w-6 h-6" /></span>
@@ -53,12 +76,17 @@ const links = [
     </div>
   </div>
 
-  <nav id="mobile-menu" aria-label="Primary" hidden class="md:hidden border-t border-line">
+  <nav id="mobile-menu" aria-label="Primary" hidden class="lg:hidden border-t border-line">
     <ul class="flex flex-col max-w-6xl px-4 py-2 mx-auto">
       {
         links.map((l) => (
           <li>
-            <a href={l.href} class="block nav-link" data-nav-link>
+            <a
+              href={l.href}
+              class="block nav-link"
+              data-nav-link={l.spy ? "" : undefined}
+              aria-current={l.page ? "page" : undefined}
+            >
               {l.label}
             </a>
           </li>

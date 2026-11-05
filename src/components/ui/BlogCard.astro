@@ -1,0 +1,55 @@
+---
+import Icon from "./Icon.astro";
+import { formatDate, type LearningItem } from "../../data/learning";
+
+interface Props {
+  item: LearningItem;
+  headingLevel?: "h2" | "h3";
+}
+const { item, headingLevel = "h3" } = Astro.props;
+const Heading = headingLevel;
+---
+
+<!-- Whole card is clickable via the title link's ::after overlay. -->
+<article
+  class="relative flex flex-col w-full gap-3 p-6 border group fade-in lift rounded-card border-line bg-bg transition-[transform,box-shadow] duration-300"
+>
+  <div class="flex flex-wrap items-center gap-2 text-xs">
+    <span class="px-2.5 py-1 font-bold rounded-full bg-accent text-on-accent">
+      {item.format}
+    </span>
+    <span class="flex items-center gap-1 text-muted">
+      <Icon name="calendar" class="w-3.5 h-3.5" />
+      <time datetime={item.date}>{formatDate(item.date)}</time>
+    </span>
+  </div>
+
+  <Heading class="text-xl font-bold group-hover:text-accent">
+    <a href={item.href} class="after:absolute after:inset-0 after:rounded-card">
+      {item.title}
+    </a>
+  </Heading>
+
+  <p class="text-sm leading-relaxed text-muted">{item.description}</p>
+
+  <ul class="flex flex-wrap gap-2 mt-auto" aria-label="Topics">
+    {
+      item.tags.map((t) => (
+        <li class="px-2.5 py-1 text-xs font-semibold rounded-full font-code bg-accent-soft text-accent">
+          {t}
+        </li>
+      ))
+    }
+  </ul>
+
+  <span
+    aria-hidden="true"
+    class="inline-flex items-center gap-1 text-sm font-semibold text-accent"
+  >
+    Open guide
+    <Icon
+      name="arrow-right"
+      class="w-4 h-4 transition-transform group-hover:translate-x-1"
+    />
+  </span>
+</article>

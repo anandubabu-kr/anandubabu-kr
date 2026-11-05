@@ -1,0 +1,49 @@
+---
+import Footer from "components/Footer.astro";
+import SiteNav from "components/SiteNav.astro";
+import BlogCard from "components/ui/BlogCard.astro";
+import IndexLayout from "layouts/IndexLayout.astro";
+import { learning } from "../../data/learning";
+
+const items = [...learning].sort((a, b) => b.date.localeCompare(a.date));
+---
+
+<IndexLayout
+  title="Blog & training | Anandu Babu"
+  description="Guides and hands-on training material on frontend engineering and team workflows, by Anandu Babu."
+>
+  <SiteNav current="blog" />
+
+  <header
+    class="relative px-4 pt-28 pb-14 text-center bg-animated text-hero-ink"
+  >
+    <div class="absolute inset-0 bg-imaged" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-2xl mx-auto">
+      <p class="text-xs font-bold uppercase tracking-[0.2em]">Blog</p>
+      <h1 class="mt-2 text-4xl font-black tracking-tight md:text-5xl">
+        Guides & training
+      </h1>
+      <p class="mt-4 md:text-lg">
+        Practical, hands-on material from training the teams I've worked with.
+        More is on the way.
+      </p>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1" class="px-4 py-14 md:px-16">
+    <ul
+      class="grid max-w-5xl gap-6 mx-auto md:grid-cols-2"
+      aria-label="Posts"
+    >
+      {
+        items.map((item) => (
+          <li class="flex">
+            <BlogCard item={item} headingLevel="h2" />
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+
+  <Footer />
+</IndexLayout>

@@ -8,6 +8,12 @@ import SocialLinks from "components/SocialLinks.astro";
 import SiteNav from "components/SiteNav.astro";
 import Icon from "components/ui/Icon.astro";
 import IndexLayout from "layouts/IndexLayout.astro";
+import BlogCard from "components/ui/BlogCard.astro";
+import { learning } from "../data/learning";
+
+const latestPosts = [...learning]
+  .sort((a, b) => b.date.localeCompare(a.date))
+  .slice(0, 2);
 ---
 
 <IndexLayout>
@@ -164,6 +170,32 @@ import IndexLayout from "layouts/IndexLayout.astro";
           summary="Business management suites, touch-friendly Electron POS apps, and admin panels for small businesses."
         />
       </ol>
+    </section>
+
+    <section id="blog" aria-labelledby="blog-heading" class="px-4 py-12 md:px-16">
+      <p class="eyebrow">Blog</p>
+      <h2 id="blog-heading" class="section-title gradient-text">
+        Guides & training
+      </h2>
+      <ul
+        class:list={[
+          "grid gap-6 mx-auto",
+          latestPosts.length > 1 ? "max-w-5xl md:grid-cols-2" : "max-w-2xl",
+        ]}
+      >
+        {
+          latestPosts.map((item) => (
+            <li class="flex">
+              <BlogCard item={item} />
+            </li>
+          ))
+        }
+      </ul>
+      <p class="mt-8 text-center">
+        <a href="/learning" class="btn-secondary">
+          View all posts<Icon name="arrow-right" class="w-4 h-4" />
+        </a>
+      </p>
     </section>
 
     <section

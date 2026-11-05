@@ -15,6 +15,7 @@ const {
   noindex = false,
 } = Astro.props;
 const image = `${site}/assets/og-image.png`;
+const canonical = new URL(Astro.url.pathname, site).href;
 
 const person = {
   "@context": "https://schema.org",
@@ -58,7 +59,7 @@ const person = {
       noindex ? (
         <meta name="robots" content="noindex" />
       ) : (
-        <link rel="canonical" href={site + "/"} />
+        <link rel="canonical" href={canonical} />
       )
     }
     <meta name="theme-color" content="#ffffff" />
@@ -75,7 +76,7 @@ const person = {
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Anandu Babu" />
     <meta property="og:locale" content="en_IN" />
-    <meta property="og:url" content={site + "/"} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
