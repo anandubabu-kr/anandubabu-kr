@@ -1,30 +1,37 @@
 ---
 const { title, link, image, description } = Astro.props;
+// Render a link only when there is a destination; otherwise a plain card.
+const Tag = link ? "a" : "div";
+const linkProps = link
+  ? { href: link, target: "_blank", rel: "noopener noreferrer" }
+  : {};
+const classes = [
+  "work-item flex border overflow-hidden rounded-md p-2 m-2",
+  "flex-col items-center justify-center sm:flex-row",
+  "md:saturate-0 hover:saturate-100 focus-visible:saturate-100 duration-200 fade-in",
+].join(" ");
 ---
 
-<a
-  href={link}
-  target="_blank"
-  class="work-item flex border overflow-hidden
-  rounded-md p-2 flex-col items-center justify-center work-item
-  m-2 sm:flex-row hover:saturate-100 md:saturate-0 duration-200 fade-in"
->
+<Tag {...linkProps} class={classes}>
   {
     image ? (
-      <img src={image} width="100px" alt={title} />
+      <img src={image} width="100px" alt="" />
     ) : (
-      <span class="flex items-center justify-center w-[100px] h-[100px] text-4xl font-black text-orange-500 bg-orange-50 rounded-md">
+      <span
+        aria-hidden="true"
+        class="flex items-center justify-center w-[100px] h-[100px] text-4xl font-black text-orange-500 bg-orange-50 rounded-md"
+      >
         {title?.charAt(0)}
       </span>
     )
   }
   <div class="mx-4 text-center md:text-left">
-    <h1 class="font-bold text-xl">
+    <h3 class="font-bold text-xl">
       {title}
-    </h1>
+    </h3>
 
     <p class="text-xs block">
       {description}
     </p>
   </div>
-</a>
+</Tag>
