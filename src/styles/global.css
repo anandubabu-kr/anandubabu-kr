@@ -6,7 +6,7 @@
 
 /* =====================================================================
    Design tokens
-   Colours are stored as "R G B" channels so Tailwind can add opacity
+   Light theme only. Colours are stored as "R G B" channels so Tailwind can add opacity
    (e.g. bg-accent/40). Exposed to Tailwind in tailwind.config.cjs.
    ===================================================================== */
 :root {
@@ -49,40 +49,6 @@
 
   /* shape */
   --radius-card: 0.75rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-
-    --c-bg: 15 17 21;
-    --c-surface: 28 25 23;
-    --c-surface-2: 41 37 36;
-    --c-ink: 245 245 244;
-    --c-muted: 168 162 158;
-    --c-line: 68 64 60;
-    --c-inverse: 10 10 10;
-    --c-on-inverse: 231 229 228;
-
-    --c-accent: 251 146 60; /* orange-400: dark text passes AA */
-    --c-accent-soft: 67 20 7;
-    --c-on-accent: 28 25 23;
-    --c-focus: 253 186 116;
-
-    /* deeper, calmer hero so light text stays readable */
-    --c-hero-ink: 250 250 249;
-    --grad-1: hsl(0, 60%, 26%);
-    --grad-2: hsl(14, 65%, 30%);
-    --grad-3: hsl(35, 70%, 28%);
-    --grad-4: hsl(25, 75%, 33%);
-    --shape-1: #9a3412;
-    --shape-2: #7c2d12;
-    --text-grad-1: hsl(40, 100%, 68%);
-    --text-grad-2: hsl(12, 100%, 66%);
-    --deco-1: hsl(30, 100%, 55%);
-    --deco-2: hsl(0, 90%, 60%);
-    --deco-3: hsl(55, 100%, 55%);
-  }
 }
 
 /* =====================================================================
@@ -322,7 +288,7 @@ menu {
 .promo-item:focus::before {
   height: 100%;
 }
-/* text sits on the bright wipe, so keep it dark in both themes */
+/* text sits on the bright wipe, so keep it dark */
 .promo-item:hover,
 .promo-item:focus {
   color: #1c1917;

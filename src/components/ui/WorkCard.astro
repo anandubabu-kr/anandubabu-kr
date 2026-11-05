@@ -1,4 +1,12 @@
 ---
+import Icon from "./Icon.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  link?: string;
+  image?: string;
+}
 const { title, link, image, description } = Astro.props;
 // Render a link only when there is a destination; otherwise a plain card.
 const Tag = link ? "a" : "div";
@@ -6,7 +14,7 @@ const linkProps = link
   ? { href: link, target: "_blank", rel: "noopener noreferrer" }
   : {};
 const classes = [
-  "work-item flex border border-line bg-bg overflow-hidden rounded-card p-3",
+  "work-item group flex border border-line bg-bg overflow-hidden rounded-card p-3",
   "flex-col items-center justify-center sm:flex-row",
   "md:saturate-0 hover:saturate-100 focus-visible:saturate-100 duration-200 fade-in",
 ].join(" ");
@@ -15,19 +23,27 @@ const classes = [
 <Tag {...linkProps} class={classes}>
   {
     image ? (
-      <img src={image} width="100" class="rounded-md dark:bg-white" alt="" />
+      <img src={image} width="100" class="rounded-md" alt="" />
     ) : (
-      <span
-        aria-hidden="true"
-        class="flex items-center justify-center w-[100px] h-[100px] text-4xl font-black text-accent bg-accent-soft rounded-md"
-      >
-        {title?.charAt(0)}
+      <span class="flex items-center justify-center w-[100px] h-[100px] text-accent bg-accent-soft rounded-md">
+        <Icon name="building" class="w-10 h-10" />
       </span>
     )
   }
   <div class="mx-4 text-center md:text-left">
-    <h3 class="font-bold text-xl">
+    <h3 class="inline-flex items-center gap-1.5 font-bold text-xl">
       {title}
+      {
+        link && (
+          <>
+            <Icon
+              name="external-link"
+              class="w-4 h-4 text-muted group-hover:text-accent"
+            />
+            <span class="sr-only">(opens in a new tab)</span>
+          </>
+        )
+      }
     </h3>
 
     <p class="text-xs block text-muted">

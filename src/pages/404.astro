@@ -1,4 +1,5 @@
 ---
+import Icon from "components/ui/Icon.astro";
 import IndexLayout from "layouts/IndexLayout.astro";
 ---
 
@@ -27,8 +28,8 @@ import IndexLayout from "layouts/IndexLayout.astro";
     </p>
     <p class="mt-2 text-muted">Let's get you back on track.</p>
     <div class="flex flex-wrap justify-center gap-3 mt-8">
-      <a class="btn-primary" href="/">Back to home</a>
-      <a class="btn-secondary" href="/resume">View resume</a>
+      <a class="btn-primary" href="/"><Icon name="home" class="w-4 h-4" />Back to home</a>
+      <a class="btn-secondary" href="/resume"><Icon name="file-text" class="w-4 h-4" />View resume</a>
     </div>
   </main>
 </IndexLayout>

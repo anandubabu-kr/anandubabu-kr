@@ -1,72 +1,46 @@
 ---
+import Icon, { type IconName } from "./ui/Icon.astro";
+
+const links: { label: string; href: string; icon: IconName; external: boolean }[] =
+  [
+    {
+      label: "Message on WhatsApp",
+      href: "https://wa.me/919947975674",
+      icon: "whatsapp",
+      external: true,
+    },
+    {
+      label: "Send an email",
+      href: "mailto:anandubabu.kr@gmail.com",
+      icon: "mail",
+      external: false,
+    },
+    {
+      label: "LinkedIn profile",
+      href: "https://www.linkedin.com/in/anandubabukr",
+      icon: "linkedin",
+      external: true,
+    },
+  ];
 ---
 
-<nav aria-label="Quick contact" class="fixed top-[30%] left-2 z-20 hidden w-10 md:block">
-  <menu>
-    <li class="mt-4">
-      <a
-        href="https://wa.me/919947975674"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="./assets/icons/whatsapp.svg"
-          alt="WhatsApp"
-          class="rounded-full hover:bg-orange-400"
-        />
-      </a>
-    </li>
-    <li class="mt-4">
-      <a
-        href="mailto:anandubabu.kr@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="./assets/icons/gmail.svg"
-          alt="Email"
-          class="rounded-full hover:bg-orange-400"
-        />
-      </a>
-    </li>
-    <li class="mt-4 hidden">
-      <a
-        href="https://github.com/anandubabu-kr/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="./assets/icons/social-gh.svg"
-          alt="github"
-          class="rounded-full hover:bg-orange-400"
-        />
-      </a>
-    </li>
-    <li class="mt-4">
-      <a
-        href="https://www.linkedin.com/in/anandubabukr"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="./assets/icons/social-ln.svg"
-          class="rounded-full hover:bg-orange-400"
-          alt="LinkedIn"
-        />
-      </a>
-    </li>
-    <li class="mt-4 hidden">
-      <a
-        href="https://codepen.io/anandubabucj7"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="./assets/icons/codepen.svg"
-          class="rounded-full hover:bg-orange-400"
-          alt="CodePen"
-        />
-      </a>
-    </li>
-  </menu>
+<!-- Desktop/tablet only; on phones the contact section covers the same links. -->
+<nav aria-label="Quick contact" class="fixed top-[30%] left-3 z-20 hidden md:block">
+  <ul class="flex flex-col gap-3">
+    {
+      links.map((l) => (
+        <li>
+          <a
+            href={l.href}
+            aria-label={l.label}
+            title={l.label}
+            {...(l.external && { target: "_blank", rel: "noopener noreferrer" })}
+            class="flex items-center justify-center w-10 h-10 transition-colors border rounded-full shadow-sm border-line bg-bg text-ink hover:bg-accent hover:text-on-accent hover:border-accent"
+          >
+            <Icon name={l.icon} class="w-5 h-5" />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </nav>

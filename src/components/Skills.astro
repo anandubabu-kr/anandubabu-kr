@@ -1,62 +1,35 @@
 ---
 import SkillCard from "./ui/SkillCard.astro";
-const data = [
-  {
-    title: "React JS",
-    image: "/assets/skills/react.png",
-  },
-  {
-    title: "Next JS",
-    image: "/assets/skills/nxtjs.png",
-  },
-  {
-    title: "TypeScript",
-    image: "/assets/skills/typecript.png",
-  },
-  {
-    title: "Astro JS",
-    image: "/assets/skills/astro.png",
-  },
-  {
-    title: "Tailwind",
-    image: "/assets/skills/tailwind.png",
-  },
-  {
-    title: "Figma",
-    image: "/assets/skills/figma.png",
-  },
-  {
-    title: "Firebase",
-    image: "/assets/skills/firebase.png",
-  },
-  {
-    title: "Node JS",
-    image: "/assets/skills/nodejs.png",
-  },
-  {
-    title: "Git/Github",
-    image: "/assets/skills/github.png",
-  },
-  {
-    title: "Antd",
-    image: "/assets/skills/antd.jpg",
-  },
-  {
-    title: "Express JS",
-    image: "/assets/skills/express.png",
-  },
+import type { IconName } from "./ui/Icon.astro";
+
+const data: { title: string; icon: IconName }[] = [
+  { title: "React", icon: "react" },
+  { title: "Next.js", icon: "nextjs" },
+  { title: "TypeScript", icon: "typescript" },
+  { title: "Astro", icon: "astro" },
+  { title: "Tailwind CSS", icon: "tailwind" },
+  { title: "Figma", icon: "figma" },
+  { title: "Firebase", icon: "firebase" },
+  { title: "Node.js", icon: "nodejs" },
+  { title: "Git / GitHub", icon: "github" },
+  { title: "Ant Design", icon: "antd" },
+  { title: "Express", icon: "express" },
 ];
 ---
 
-<section id="skills" aria-labelledby="skills-heading" class="px-4 my-10 md:my-16 md:px-16">
+<section
+  id="skills"
+  aria-labelledby="skills-heading"
+  class="px-4 my-10 md:my-16 md:px-16"
+>
   <h2 id="skills-heading" class="section-title gradient-text">
     Tools I work with
   </h2>
   <hr class="border-line" />
-  <div
+  <ul
     id="items"
-    class="box-border lg:w-[70%] lg:mx-auto flex flex-wrap items-center justify-center mt-7"
+    class="box-border flex flex-wrap items-center justify-center gap-2 lg:w-[70%] lg:mx-auto mt-7"
   >
-    {data.map((item) => <SkillCard title={item.title} image={item.image} />)}
-  </div>
+    {data.map((item) => <SkillCard title={item.title} icon={item.icon} />)}
+  </ul>
 </section>

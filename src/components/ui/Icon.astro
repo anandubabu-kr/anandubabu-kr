@@ -1,0 +1,124 @@
+---
+/**
+ * One icon component for the whole site. Icons are inlined at build time,
+ * so no icon font or client-side JS is shipped.
+ *
+ * - UI icons: Lucide (https://lucide.dev), stroked, inherit text colour.
+ * - Brand logos: Simple Icons (https://simpleicons.org), filled.
+ *
+ * Usage:
+ *   <Icon name="mail" />                          decorative (aria-hidden)
+ *   <Icon name="github" label="GitHub" />         meaningful (role="img")
+ *   <Icon name="react" brandColor class="w-8 h-8" />
+ */
+import {
+  ArrowRight,
+  Briefcase,
+  Building2,
+  Calendar,
+  ExternalLink,
+  FileText,
+  House,
+  LayoutDashboard,
+  Mail,
+  PenTool,
+  Phone,
+  Send,
+  Users,
+  Wrench,
+} from "lucide-static";
+import {
+  siAntdesign,
+  siAstro,
+  siExpress,
+  siFigma,
+  siFirebase,
+  siGithub,
+  siInstagram,
+  siNextdotjs,
+  siNodedotjs,
+  siReact,
+  siTailwindcss,
+  siTypescript,
+  siWhatsapp,
+} from "simple-icons";
+import { siCodepen, siLinkedin, type BrandIcon } from "./brand-icons";
+
+const uiIcons = {
+  "arrow-right": ArrowRight,
+  briefcase: Briefcase,
+  building: Building2,
+  calendar: Calendar,
+  "external-link": ExternalLink,
+  "file-text": FileText,
+  home: House,
+  dashboard: LayoutDashboard,
+  mail: Mail,
+  "pen-tool": PenTool,
+  phone: Phone,
+  send: Send,
+  users: Users,
+  wrench: Wrench,
+} as const;
+
+const brandIcons: Record<string, BrandIcon> = {
+  antd: siAntdesign,
+  astro: siAstro,
+  codepen: siCodepen,
+  express: siExpress,
+  figma: siFigma,
+  firebase: siFirebase,
+  github: siGithub,
+  instagram: siInstagram,
+  linkedin: siLinkedin,
+  nextjs: siNextdotjs,
+  nodejs: siNodedotjs,
+  react: siReact,
+  tailwind: siTailwindcss,
+  typescript: siTypescript,
+  whatsapp: siWhatsapp,
+};
+
+export type IconName = keyof typeof uiIcons | keyof typeof brandIcons;
+
+interface Props {
+  name: IconName;
+  class?: string;
+  /** Accessible name. Omit for decorative icons next to visible text. */
+  label?: string;
+  /** Brand logos only: use the brand colour (near-black brands use the text colour). */
+  brandColor?: boolean;
+}
+
+const { name, class: className = "w-5 h-5", label, brandColor = false } =
+  Astro.props;
+
+const escape = (s: string) => s.replace(/"/g, "&quot;");
+const a11y = label
+  ? `role="img" aria-label="${escape(label)}"`
+  : `aria-hidden="true" focusable="false"`;
+const cls = `shrink-0 ${className}`;
+
+// Near-black brand colours (Next.js, GitHub, Express) follow the text colour.
+const isNearBlack = (hex: string) => {
+  const [r, g, b] = [0, 2, 4].map((i) => parseInt(hex.slice(i, i + 2), 16));
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b < 60;
+};
+
+let svg: string;
+if (name in uiIcons) {
+  svg = uiIcons[name as keyof typeof uiIcons]
+    .replace(/\sclass="[^"]*"/, "")
+    .replace(/\s(width|height)="24"/g, "")
+    .replace("<svg", `<svg ${a11y} class="${cls}"`);
+} else if (name in brandIcons) {
+  const icon = brandIcons[name];
+  const fill =
+    brandColor && !isNearBlack(icon.hex) ? `#${icon.hex}` : "currentColor";
+  svg = `<svg ${a11y} class="${cls}" viewBox="0 0 24 24" fill="${fill}" xmlns="http://www.w3.org/2000/svg"><path d="${icon.path}"/></svg>`;
+} else {
+  throw new Error(`Unknown icon "${name}"`);
+}
+---
+
+<Fragment set:html={svg} />

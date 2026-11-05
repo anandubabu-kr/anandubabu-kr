@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-// Design tokens live as CSS variables in src/styles/global.css (light + dark).
+// Design tokens live as CSS variables in src/styles/global.css (light theme).
 // These entries expose them to Tailwind, e.g. `bg-surface`, `text-ink`,
 // `border-line`, `bg-accent/40`. Names are new so nothing on the resume or
 // learning pages changes.

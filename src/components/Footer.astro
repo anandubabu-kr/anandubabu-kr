@@ -1,5 +1,18 @@
 ---
+import Icon, { type IconName } from "./ui/Icon.astro";
 
+const social: { label: string; href: string; icon: IconName }[] = [
+  { label: "GitHub", href: "https://github.com/anandubabu-kr/", icon: "github" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/anandubabukr", icon: "linkedin" },
+  { label: "CodePen", href: "https://codepen.io/anandubabucj7", icon: "codepen" },
+  { label: "Instagram", href: "https://www.instagram.com/anandubabukr", icon: "instagram" },
+];
+
+const contact: { label: string; text: string; href: string; icon: IconName }[] = [
+  { label: "Phone", text: "+91 9947975674", href: "tel:+919947975674", icon: "phone" },
+  { label: "Email", text: "anandubabu.kr@gmail.com", href: "mailto:anandubabu.kr@gmail.com", icon: "mail" },
+  { label: "WhatsApp", text: "WhatsApp", href: "https://wa.me/919947975674", icon: "whatsapp" },
+];
 ---
 
 <footer class="px-4 py-10 mt-4 bg-inverse text-on-inverse">
@@ -60,76 +73,50 @@
         </g>
       </svg>
     </div>
-    <p class="text-center">&copy; Anandu Babu</p>
-    <p class="text-center">{new Date().getFullYear()}</p>
+    <p class="mt-2 text-center">&copy; {new Date().getFullYear()} Anandu Babu</p>
   </div>
 
-  <div class="mx-auto w-fit flex gap-4 mt-4">
-    <a
-      href="https://github.com/anandubabu-kr/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="./assets/icons/social-gh.svg"
-        alt="github"
-        class="rounded-full hover:bg-accent w-6"
-      />
-    </a>
-    <a
-      href="https://codepen.io/anandubabucj7"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="./assets/icons/codepen.svg"
-        class="rounded-full w-6 hover:bg-accent"
-        alt="CodePen"
-      />
-    </a>
-    <a
-      href="https://www.instagram.com/anandubabukr"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="./assets/icons/instagram.svg"
-        class="rounded-full w-6 hover:bg-accent"
-        alt="Instagram"
-      />
-    </a>
-  </div>
+  <ul class="flex justify-center gap-3 mx-auto mt-6" aria-label="Social profiles">
+    {
+      social.map((s) => (
+        <li>
+          <a
+            href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${s.label} (opens in a new tab)`}
+            title={s.label}
+            class="flex items-center justify-center w-10 h-10 transition-colors rounded-full bg-on-inverse/10 hover:bg-accent hover:text-on-accent"
+          >
+            <Icon name={s.icon} class="w-5 h-5" />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 
-  <div class="justify-between flex-col mx-auto flex mt-2">
-    <div class="mt-4 flex flex-col items-center gap-3 md:flex-row md:gap-6 mx-auto">
-      <a href="tel:+919947975674" class="flex items-center">
-        <img src="./assets/icons/phone.png" class="w-5 h-5 mx-2" alt="Phone" />
-        <p>+91 9947975674</p>
-      </a>
-      <a href="mailto:anandubabu.kr@gmail.com" class="flex items-center">
-        <img src="./assets/icons/mail.png" class="w-5 h-5 mx-2" alt="email" />
-        <p>anandubabu.kr@gmail.com</p>
-      </a>
-      <a
-        href="https://www.linkedin.com/in/anandubabukr"
-        class="flex items-center"
-      >
-        <img
-          src="./assets/icons/linkedin.png"
-          class="w-5 h-5 mx-2"
-          alt="LinkedIn"
-        />
-        <p>in/anandubabukr</p>
-      </a>
-    </div>
+  <address
+    class="flex flex-col items-center justify-center gap-3 mt-6 not-italic md:flex-row md:gap-8"
+  >
+    {
+      contact.map((c) => (
+        <a
+          href={c.href}
+          class="inline-flex items-center gap-2 hover:text-accent"
+          {...(c.href.startsWith("http") && {
+            target: "_blank",
+            rel: "noopener noreferrer",
+          })}
+        >
+          <Icon name={c.icon} class="w-5 h-5" />
+          <span class="sr-only">{c.label}:</span>
+          {c.text}
+        </a>
+      ))
+    }
+  </address>
 
-    <div class="mx-auto text-on-inverse/70 text-sm">
-      <p class="text-center mt-4">Built with</p>
-      <div class="flex gap-2">
-        <p>Tailwind</p>
-        <p>Github</p>
-        <p>Astro JS</p>
-      </div>
-    </div>
-  </div>
+  <p class="mt-8 text-sm text-center text-on-inverse/70">
+    Built with Astro, Tailwind CSS &amp; GitHub
+  </p>
 </footer>

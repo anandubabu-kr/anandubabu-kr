@@ -5,6 +5,7 @@ import PromoCard from "components/ui/PromoCard.astro";
 import WorkCard from "components/ui/WorkCard.astro";
 import Skills from "components/Skills.astro";
 import SocialLinks from "components/SocialLinks.astro";
+import Icon from "components/ui/Icon.astro";
 import IndexLayout from "layouts/IndexLayout.astro";
 ---
 
@@ -35,8 +36,12 @@ import IndexLayout from "layouts/IndexLayout.astro";
           5+ years building web apps for global banks and growing businesses.
         </p>
         <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-          <a class="btn-primary" href="/resume">View resume</a>
-          <a class="btn-secondary" href="#contact">Start a project</a>
+          <a class="btn-primary" href="/resume">
+            <Icon name="file-text" class="w-4 h-4" />View resume
+          </a>
+          <a class="btn-secondary" href="#contact">
+            <Icon name="send" class="w-4 h-4" />Start a project
+          </a>
         </div>
       </div>
     </div>
@@ -77,14 +82,17 @@ import IndexLayout from "layouts/IndexLayout.astro";
       </h2>
       <div id="promo" class="flex my-4 text-center md:py-10">
         <PromoCard
+          icon="users"
           title="Frontend leadership for your team"
           description="Architecture that scales: monorepos, shared component libraries in Storybook, Jest/RTL and Cypress testing, secure auth flows, and mentoring that gets new developers productive quickly."
         />
         <PromoCard
+          icon="dashboard"
           title="Custom apps for your business"
           description="Admin panels, dashboards, delivery and customer apps, and touch-friendly desktop apps for POS machines, built around how your business actually works."
         />
         <PromoCard
+          icon="pen-tool"
           title="From design to production"
           description="Figma designs turned into polished, responsive interfaces with design systems, dark mode, and multilingual support, ready for real users from day one."
         />
@@ -153,28 +161,45 @@ import IndexLayout from "layouts/IndexLayout.astro";
         class="grid w-full max-w-2xl gap-4 mx-auto mt-8 sm:grid-cols-2"
       >
         <div class="flex flex-col items-center gap-3 p-6 rounded-card bg-surface">
+          <span
+            class="flex items-center justify-center w-12 h-12 rounded-full bg-accent-soft text-accent"
+          >
+            <Icon name="briefcase" class="w-6 h-6" />
+          </span>
           <h3 class="font-bold">Recruiters & hiring managers</h3>
-          <a class="btn-primary" href="/resume">View my resume &rightarrow;</a>
+          <a class="btn-primary" href="/resume">
+            <Icon name="file-text" class="w-4 h-4" />View my resume
+          </a>
           <a
-            class="text-sm underline underline-offset-4"
+            class="inline-flex items-center gap-1.5 text-sm underline underline-offset-4"
             href="https://www.linkedin.com/in/anandubabukr"
             target="_blank"
-            rel="noopener noreferrer">Connect on LinkedIn</a
+            rel="noopener noreferrer"
           >
+            <Icon name="linkedin" class="w-4 h-4" />Connect on LinkedIn
+          </a>
         </div>
         <div class="flex flex-col items-center gap-3 p-6 rounded-card bg-surface">
+          <span
+            class="flex items-center justify-center w-12 h-12 rounded-full bg-accent-soft text-accent"
+          >
+            <Icon name="dashboard" class="w-6 h-6" />
+          </span>
           <h3 class="font-bold">Clients with a project</h3>
           <a
             class="btn-primary"
             href="mailto:anandubabu.kr@gmail.com?subject=Project%20enquiry"
-            >Email me &rightarrow;</a
           >
+            <Icon name="mail" class="w-4 h-4" />Email me
+          </a>
           <a
-            class="text-sm underline underline-offset-4"
+            class="inline-flex items-center gap-1.5 text-sm underline underline-offset-4"
             href="https://wa.me/919947975674"
             target="_blank"
-            rel="noopener noreferrer">Message on WhatsApp</a
+            rel="noopener noreferrer"
           >
+            <Icon name="whatsapp" class="w-4 h-4" />Message on WhatsApp
+          </a>
         </div>
       </div>
       <hr class="divider w-1/5 mt-10" />
